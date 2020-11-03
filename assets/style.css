@@ -30,22 +30,61 @@ font-family: 'Denk One', sans-serif;
 /* Landing page */
 
 #home {
-background: linear-gradient(rgba(0, 0, 0, 0.753), rgba(0, 0, 0, 0.753)), url('https://i.postimg.cc/Dz113ML2/walkers-486583-1920.jpg'), no-repeat 50% 50%;
-background-size: cover;
-display: table;
-height: 100vh;
-width: 100vw;
+    background: linear-gradient(rgba(0, 0, 0, 0.753), rgba(0, 0, 0, 0.753)), url('https://i.postimg.cc/Dz113ML2/walkers-486583-1920.jpg'), no-repeat 50% 50%;
+    background-size: cover;
+    display: table;
+    height: 100vh;
+    width: 100vw;
 }
 
 .landing-text {
     display: table-cell;
-    vertical-align: middle;
     text-align: center;
+    vertical-align: middle;
+}
+
+h1 {
+    animation: opacityPulse 6s ease-out; 
+    animation-iteration-count: infinite;
+    font-size: 700%;
+    letter-spacing: 8px;
+    line-height: 1.5;
+    opacity: 0; 
+}
+
+h3 {
+    font-size: 200%;
+    font-weight:500;
+    line-height: 1.2;
+}
+
+.neon {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #ff073a,
+    0 0 80px #ff073a,
+    0 0 90px #ff073a,
+    0 0 100px #ff073a,
+    0 0 150px #ff073a;
 }
 
 .btn-landing {
     background-color:  #bf0000;
+    border: 1px solid white;
     color: #fff;
     font: 160%;
-    border: 1px solid white;
+}
+
+@-webkit-keyframes opacityPulse {
+    0% {opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {opacity: 0.0;}
+}
+
+.btn-landing:hover {
+    background-color: #36342F;
+    color: #fff;
 }
