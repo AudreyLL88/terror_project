@@ -5,6 +5,7 @@ const start_btn_paranormal = document.querySelector(".start-btn-paranormal butto
 const rule_box = document.querySelector(".rule_box");
 const quiz_back = document.querySelector(".quiz_back");
 const container_disabled = document.querySelector(".card-container");
+<<<<<<< HEAD
 const slasherWrap = document.querySelector(".card-wrap1");
 const monsterWrap = document.querySelector(".card-wrap3");
 const paranormalWrap = document.querySelector(".card-wrap2");
@@ -17,6 +18,12 @@ const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const next_card = result_box.querySelector(".buttons .next_card");
 const final_box = document.querySelector(".final_box");
+=======
+const exit_btn = rule_box.querySelector(".buttons .quit");
+const continue_btn = rule_box.querySelector(".buttons .start");
+const quiz_box = document.querySelector(".quiz_box");
+
+>>>>>>> 1e5be20c90b21ca59d6a4a3035d18bd690c116ec
 
 let activeCard = "None"
 
@@ -57,6 +64,7 @@ exit_btn.onclick =()=>{
 continue_btn.onclick =()=>{
     rule_box.classList.remove("activeInfo");
     quiz_box.classList.add("activeQuiz");
+<<<<<<< HEAD
      showQuestions(0);
      queCounter(1);
      startTimer(15);
@@ -234,4 +242,6 @@ function showFinal(){
         let finalTag = '<span>and sorry 😐, You got only <p>'+ totalScore +'</p></span>';
         finalText.innerHTML = finalTag;
     }
+=======
+>>>>>>> 1e5be20c90b21ca59d6a4a3035d18bd690c116ec
 }
