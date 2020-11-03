@@ -54,7 +54,10 @@ continue_btn.onclick =()=>{
     rule_box.classList.remove("activeInfo");
     quiz_box.classList.add("activeQuiz");
      showQuestions(0);
+     queCounter(1);
 }
+
+//Quiz box 
 
 let que_count =  0;
 let que_numb = 1;
@@ -122,15 +125,25 @@ function optionSelected(answer){
     }
     next_btn.style.display = "block";
 }
-//Next button 
+
+//Next button display
+
 next_btn.onclick =()=>{
    if(que_count < questions1.length -1){
         que_count++;
         que_numb++;
     showQuestions(que_count);
+    queCounter(que_numb);
     next_btn.style.display = "none";
    }else{
        console.log("Questions completed");
-       showResult();
    };
+}
+
+// Question counter in Quizz box footer
+
+function queCounter(index){
+    const question_counter = document.querySelector(".total");
+    let totalQuestionCountTag = '<span><p>'+ index +'</p> of <p>'+ questions1.length +'</p> Questions</span>';
+    question_counter.innerHTML = totalQuestionCountTag;  
 }
