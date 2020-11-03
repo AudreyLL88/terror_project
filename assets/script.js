@@ -16,6 +16,7 @@ const timeCount = document.querySelector(".timer .timer_sec");
 const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const next_card = result_box.querySelector(".buttons .next_card");
+const final_box = document.querySelector(".final_box");
 
 let activeCard = "None"
 
@@ -206,7 +207,31 @@ next_card.onclick = ()=>{
     que_count = 0;
     que_numb = 1;
     userScore = 0;
-    widthValue = 0;
-    container_disabled.classList.remove("disabled");
-    quiz_back.classList.remove("activeBack");
+    if(cardCount >= 3){
+        showFinal();
+    }
+    else{
+        container_disabled.classList.remove("disabled");
+        quiz_back.classList.remove("activeBack");
+    }
+}
+
+//Final result box 
+
+function showFinal(){ 
+    result_box.classList.remove("activeResult"); 
+    final_box.classList.add("activeFinal")
+    const finalText = final_box.querySelector(".final_score");
+    if (userScore = 15){ 
+        let finalTag = '<span>and congrats! 🎉, You got <p>'+ totalScore +'</p></span>';
+        finalText.innerHTML = finalTag;  
+    }
+    else if(userScore > 10){ 
+        let finalTag = '<span>and nice 😎, You got <p>'+ totalScore +'</p></span>';
+        finalText.innerHTML = finalTag;
+    }
+    else{ 
+        let finalTag = '<span>and sorry 😐, You got only <p>'+ totalScore +'</p></span>';
+        finalText.innerHTML = finalTag;
+    }
 }
