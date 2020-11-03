@@ -1,25 +1,23 @@
-//getting all required elements
+/*jshint esversion: 6 */
 const start_btn_slasher = document.querySelector(".start-btn-slasher button");
 const start_btn_monster = document.querySelector(".start-btn-monster button");
 const start_btn_paranormal = document.querySelector(".start-btn-paranormal button");
 const rule_box = document.querySelector(".rule_box");
-const exit_btn = rule_box.querySelector(".buttons .quit");
-const continue_btn = rule_box.querySelector(".buttons .start");
+const continue_btn = document.querySelector(".buttons .start");
 const quiz_box = document.querySelector(".quiz_box");
 const option_list = document.querySelector(".option_list");
 const timeCount = document.querySelector(".timer .timer_sec");
-const timeOff = document.querySelector("header .time_text");
 const slasherWrap = document.querySelector(".card-wrap1");
 const monsterWrap = document.querySelector(".card-wrap3");
 const paranormalWrap = document.querySelector(".card-wrap2");
 const quiz_back = document.querySelector(".quiz_back");
 const container_disabled = document.querySelector(".card-container");
-const next_btn = quiz_box.querySelector(".next_btn");
+const next_btn = document.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
-const next_card = result_box.querySelector(".buttons .next_card");
+const next_card = document.querySelector(".buttons .next_card");
 const final_box = document.querySelector(".final_box");
 
-let activeCard = "None"
+let activeCard = "None";
 
 //Card buttons 
 
@@ -29,7 +27,7 @@ start_btn_slasher.onclick =()=>{
     quiz_back.classList.add("activeBack");
     rule_box.classList.add("activeInfo");
     slasherWrap.classList.add("noHover");
-}
+};
 
 start_btn_monster.onclick =()=>{
     activeCard = "monster";
@@ -37,7 +35,7 @@ start_btn_monster.onclick =()=>{
     quiz_back.classList.add("activeBack");
     rule_box.classList.add("activeInfo");
     monsterWrap.classList.add("noHover");
-}
+};
 
 start_btn_paranormal.onclick =()=>{
     activeCard = "paranormal";
@@ -45,7 +43,7 @@ start_btn_paranormal.onclick =()=>{
     quiz_back.classList.add("activeBack");
     rule_box.classList.add("activeInfo");
     paranormalWrap.classList.add("noHover");
-}
+};
 
 // Rule Box Play Button
 
@@ -55,10 +53,11 @@ continue_btn.onclick =()=>{
     showQuestions(0);
     queCounter(1);
     startTimer(15);
-}
+};
 
 //Quiz box 
 
+let i;
 let que_count =  0;
 let que_numb = 1;
 let counter;
@@ -70,7 +69,7 @@ let cardCount = 0;
 let questionsArray;
 
 function showQuestions(index){
-    let questionCategory = "None"
+    let questionCategory = "None";
     if(activeCard == "slasher"){
         questionsArray = questions2;
     }
@@ -84,9 +83,9 @@ function showQuestions(index){
     const que_name = document.querySelector(".que_name");
     let que_tag = '<span>'+ questionsArray[index].numb + ". " + questionsArray[index].question +'</span>';
     let option_tag = '<div class="option"><span>'+ questionsArray[index].options[0] +'</span></div>'
-    + '<div class="option"><span>'+ questionsArray[index].options[1] +'</span></div>'
-    + '<div class="option"><span>'+ questionsArray[index].options[2] +'</span></div>'
-    + '<div class="option"><span>'+ questionsArray[index].options[3] +'</span></div>';
+    + '<div class="option"><span>'+ questionsArray[index].options[1]+'</span></div>'
+    + '<div class="option"><span>'+ questionsArray[index].options[2]+'</span></div>'
+    + '<div class="option"><span>'+ questionsArray[index].options[3]+'</span></div>';
     que_name.innerHTML = que_tag; 
     option_list.innerHTML = option_tag; 
     que_title.innerHTML = questionsArray[index].category; 
@@ -117,7 +116,7 @@ function  optionSelected(answer){
 
          for (i = 0; i < allOptions; i++) {
             if(option_list.children[i].textContent == correctAns){
-            option_list.children[i].setAttribute("class", "option correct")
+            option_list.children[i].setAttribute("class", "option correct");
             }
         }
     }
@@ -131,7 +130,7 @@ function  optionSelected(answer){
 //Next button display
 
 next_btn.onclick =()=>{
-   if(que_count < questions1.length -1){
+   if(que_count < questionsArray.length -1){
         que_count++;
         que_numb++;
     showQuestions(que_count);
@@ -142,8 +141,8 @@ next_btn.onclick =()=>{
    }else{
        console.log("Questions completed");
        showResult();
-   };
-}
+   }
+};
 
 // Question counter in Quizz box footer
 
@@ -200,22 +199,21 @@ next_card.onclick = ()=>{
     que_count = 0;
     que_numb = 1;
     userScore = 0;
-    widthValue = 0;
     if(cardCount >= 3){
         showFinal();
     }else{
         container_disabled.classList.remove("disabled");
         quiz_back.classList.remove("activeBack");
     }
-}
+};
 
 //Final result box 
 
 function showFinal(){ 
     result_box.classList.remove("activeResult"); 
-    final_box.classList.add("activeFinal")
+    final_box.classList.add("activeFinal");
     const finalText = final_box.querySelector(".final_score");
-    if (userScore = 15){ 
+    if (userScore == 15){ 
         let finalTag = '<span>and congrats! 🎉, You got <p>'+ totalScore +'</p></span>';
         finalText.innerHTML = finalTag;  
     }
