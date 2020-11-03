@@ -203,3 +203,81 @@ text-align: center;
    text-decoration: none;
 }
 
+/* Quiz Rule Box */
+
+.rule_box{
+    width:  540px;
+    max-width: 80%;
+    background: #0e1111;
+    border-radius:5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+.rule_title {
+    align-items: center;
+    border-bottom: 1px solid white;
+    display: flex;
+    font-size: 20px;
+    font-weight: 600;
+    height: 60px;
+    padding: 0 30px;
+    width: 100%;
+}
+
+.rule_list{
+    padding: 15px 35px;
+}
+
+.rule {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.rule span {
+    color: red;
+    font-weight: 600;
+}
+
+.rule_box .buttons {
+    align-items: center;
+    border-top: 1px solid white;
+    display: flex;
+    height: 60px;
+    justify-content: flex-end;
+    padding: 0 35px;
+}
+
+.rule_box .buttons button{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    width: 100px;
+}
+
+.buttons button.start{   
+    background:#bf0000;
+    color:#fff;
+}
+
+.buttons button.start:hover{
+    background: #d3394c;
+}
+
+.buttons button.quit{
+    background: white;
+    color: #bf0000
+}
+
+.buttons button.quit{
+    background: purple;
+    color: #bf0000
+}
+
