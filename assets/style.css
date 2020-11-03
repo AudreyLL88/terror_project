@@ -109,7 +109,9 @@ text-align: center;
    padding: 60px 30px;
 }
 
-.card-wrap1 {
+.card-wrap1,
+.card-wrap2,
+.card-wrap3 {
    flex: 1;
    height: 380px;
    margin: 0 15px 30px;
@@ -119,7 +121,9 @@ text-align: center;
    width: 300px;
 }
 
-.card-wrap1:hover .flipper {
+.card-wrap1:hover .flipper,
+.card-wrap2:hover .flipper,
+.card-wrap3:hover .flipper {
    transform: rotateY(180deg);
 }
 
@@ -163,7 +167,9 @@ text-align: center;
    transform: rotateY(180deg);
 }
 
-.slasher_img{ 
+.slasher_img,
+.monster_img,
+.paranormal_img{ 
     border-radius: 50%;
     height: 150px; 
     margin-bottom: 10px; 
