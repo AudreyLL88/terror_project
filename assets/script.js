@@ -11,6 +11,7 @@ const paranormalWrap = document.querySelector(".card-wrap2");
 const exit_btn = rule_box.querySelector(".buttons .quit");
 const continue_btn = rule_box.querySelector(".buttons .start");
 const quiz_box = document.querySelector(".quiz_box");
+const option_list = document.querySelector(".option_list");
 
 
 let activeCard = "None"
@@ -52,4 +53,35 @@ exit_btn.onclick =()=>{
 continue_btn.onclick =()=>{
     rule_box.classList.remove("activeInfo");
     quiz_box.classList.add("activeQuiz");
+     showQuestions(0);
+}
+
+let questionsArray;
+
+function showQuestions(index){
+    let questionCategory = "None"
+    if(activeCard == "slasher"){
+        questionsArray = questions2;
+    }
+    else if(activeCard == "monster"){
+        questionsArray = questions3;
+    }
+    else if(activeCard == "paranormal"){
+        questionsArray = questions1;
+    }
+    const que_title = document.querySelector(".que_title");
+    const que_name = document.querySelector(".que_name");
+    let que_tag = '<span>'+ questionsArray[index].numb + ". " + questionsArray[index].question +'</span>';
+    let option_tag = '<div class="option"><span>'+ questionsArray[index].options[0] +'</span></div>'
+    + '<div class="option"><span>'+ questionsArray[index].options[1] +'</span></div>'
+    + '<div class="option"><span>'+ questionsArray[index].options[2] +'</span></div>'
+    + '<div class="option"><span>'+ questionsArray[index].options[3] +'</span></div>';
+    que_name.innerHTML = que_tag; 
+    option_list.innerHTML = option_tag; 
+    que_title.innerHTML = questionsArray[index].category; 
+
+    const option = option_list.querySelectorAll(".option");
+    for(i=0; i < option.length; i++){
+        option[i].setAttribute("onclick", "optionSelected(this)");
+    }
 }
