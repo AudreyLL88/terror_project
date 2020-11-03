@@ -152,14 +152,10 @@ View my wireframes [here](img/t-error.pdf).
 
 **Tools & Libraries**
 
-
 * [Bootstrap](https://getbootstrap.com/)
-
 * [Font-Awesome](https://fontawesome.com/icons?d=gallery)
 * [Google fonts](https://fonts.google.com/)
-* [Gimp](https://www.gimp.org/)
 * [Git](https://git-scm.com/)
-* [Hover.css](https://ianlunn.github.io/Hover/)
 
 <a name="testing"></a>
 
@@ -182,77 +178,55 @@ View my wireframes [here](img/t-error.pdf).
 
 **Cards**
 
-![Contact](assets/images/screenshot_contactform.png)
+![Cards]()
 
 * **Implementation** 
 
-I used the **contact form** that was introduced to us during [**the mini project challenge**](https://github.com/AudreyLL88/mini-project-cv) because I liked how it sit **in the middle of the page and is very straightforward**. I wanted to add **an "add images" button** but realized that **I needed to know some JS**. I customized it a bit by **adding margins, a checkbox and a modal button**. As skills grows, **JavaScript** will be introduced to **ensure** that the form must be **validated before modal appears**. For now the **contact form** doesn't work as it is not using a **PHP**. 
-All input elements work and **are responsive**.
+**Neon Pulsing Title**
 
-**Google Calendar**
+![Title]()
 
-![Calendar](assets/images/screenshot_booking.png)
+* **Implementation** 
 
-* **Implementation**
+**Quizz with timer**
 
-Embedding a **Google Calendar** is pretty straightforward and customable within the Google site and I initially did some **inline styling in the iframe** so the calendar would take **100% width/height of the column on all device**... and **HTML Validator didn't like that** so I moved it to **CSS**, which all validators liked. Good Job me.
-
-**Registration Forms**
+![Quizz]()
 
 * **Implementation**
 
-**Bootstrap** has extensive **documentation** about forms so I extracted the code from **the Bootstrap documentation** and build my own **fitting input areas** and **modal buttons**. I fitted the form on **lg and md screen next to the calendar** and **for sm screens I fitted it under the calendar** and added some **padding** between the sections in a **corresponding media query**. As skills grows, **JavaScript** will be introduced to **ensure** that the form must be **validated before modal appears**. For now the **registration form** doesn't work as it is not using a **PHP**,
+**Card Score**
 
-**Image Gallery**
-
-![Gallery](assets/images/screenshot_gallery.png)
+![Scorecard]()
 
 * **Implementation**
 
-**My mentor** suggested after seeing my **wireframe** during our preliminary meeting that I should use the **Fancybox library**. After researching it, I **resized my images with Gimp** to create the thumbnails and used this [**Bootstrap gallery template**](https://startbootstrap.com/snippets/thumbnail-gallery/) for the **responsivness** and added the **Fancybox "data-fancybox"** and **alt text**.**
+**Final Score**
 
-**Modal buttons**
-
-![Modal](assets/images/screenshot_modal.png)
+![Scorecard]()
 
 * **Implementation**
 
-* I used the **Bootstrap documentation** to implement a **modal on button click** in the **contact form** and the **registration form** and **customized it** with according text and button styling.
 
 <a name="issues"></a>
+
 ## Issues ##
 ---
 
-I still have **nightmares** about **bootstrap cards**. **The horror, oh the horror**. It doesn't show on my commits because I wanted to commit only when I was satisfied with it.
-
-But that's not all, so here we go:
 
 **During development**
 
-* **Cards responsivness:**
-* Initial card image top didn't fit on lg screen so I went for a bigger image.
-* Then the card was taking too much width on lg and sm screen (strangely it was ok on md screen) no matter what grid system I would use. So I started again from zero.
-* Extracted the code from the Bootstrap library and added the .card-img-top class to my image and it worked.
-* I almost cried of happiness.
-* Then I added a list in the card-body and everything broke down in lenght because it was too much text.
-* So I decided to go for a small paragraph of text and it looked a 100% times better. To me the cards are still a bit long and this is something I will work more on in the future.
-
-**Overflow**
-* After deploying my website and submitting it for peer-review on Slack another student picked on my website having a bit of overflow on mobile.
-* I downloaded Unicorn Revealer (Chrome extenstion), grabbed a web designer friend and discovered it was the bootstrap row class in the hero-container of my Title section in index.html.
-* I removed it and it now works beautifully.
 
 ## Deployment ##
 ---
-Electric LadyLand Silver was developed on **GitPod**, using **GitHub** to host the repository and deployed on **GitHub Pages**.
+**T-erroR** was developed on **GitPod**, using **GitHub** to host the repository and deployed on **GitHub Pages**.
 **GitHub** made the deployment extremely painless:
 
 * Connected to Github
-* Selected the repository **AudreyLL88/Electric_LadyLand_Silver**
+* Selected the repository **AudreyLL88/terror_project**
 * Clicked on **"settings"** in the navigation bar
 * In the **GitHub Pages** I selected **Master Branch** and **/root** in the dropdown menu and clicked **Save**
 * I waited 2 minutes.
-* And voila! **The website is now live on  https://audreyll88.github.io/Electric_LadyLand_Silver/**
+* And voila! **The website is now live on**
 
 **Cloning ?** No problem:
 

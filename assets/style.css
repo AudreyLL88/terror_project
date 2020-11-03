@@ -88,6 +88,17 @@ h3 {
     color: #fff;
 }
 
+/* Media Queries */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 350%;
+    }
+    h3 {
+        font-size: 150%;
+    }
+}
+
 /* Card page card section */
 
 #title-container{
