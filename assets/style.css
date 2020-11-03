@@ -6,7 +6,6 @@
 
 * {
    margin: 0;  
-   padding: 0;
    box-sizing: border-box;
 }
 
@@ -90,3 +89,22 @@ h3 {
 }
 
 /* Card page */
+
+#title-container{
+max-width: 1200px;
+margin: auto;
+padding: 60px 30px 0px;
+text-align: center;
+}
+
+#title-container h3 {
+    padding-bottom: 15px;
+}
+
+.card-container {
+   margin: auto;
+   padding: 60px 30px;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
