@@ -88,7 +88,7 @@ h3 {
     color: #fff;
 }
 
-/* Card page */
+/* Card page card section */
 
 #title-container{
 max-width: 1200px;
@@ -281,3 +281,116 @@ text-align: center;
     color: #bf0000
 }
 
+/* Quiz box */
+
+.quiz_box{
+    background: #0e1111;
+    border-radius: 5px;
+    max-width: 80%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.5);
+    width: 550px;
+}
+
+.quiz_box header {
+    align-items: center;
+    background: #0e1111;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: relative;
+    z-index: 99;
+}
+
+.que_title{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.timer{
+    align-items: center;
+    background:#bf0000;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: flex;
+    height: 45px;
+    justify-content: space-between;
+    min-width: 100px;
+    min-height: 40px ;
+    padding: 0 8px;
+    width: 145px;
+}
+
+.timer_sec{
+    background: black;
+    border-radius: 5px;
+    border: 1px solid #343a40;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+    user-select: none;
+    width: 45px;
+}
+
+.quiz_box section {
+    background: #0e1111;
+    padding: 25px 30px 20px 30px;
+}
+
+.que_name{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.option_list{
+    display: block;
+    padding: 20px 0;
+}
+
+.option{
+    align-items: center;
+    background: #0e1111;
+    border:1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    font-size: 17px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+.option:hover{
+    color:	#400000;
+    background: #d3394c;
+    border-color: #af2d46;
+}
+
+.option_list .option:last-child{
+    margin-bottom: 0px
+}
+
+
+ .option.correct{
+    border-color: #23903c;
+    color: #23903c;
+    background: #d4edda; 
+}
+
+ .option.incorrect{
+     border-color: #a4283a;
+    color: #f8d7da;
+    background: #a4283a;
+}
+
+ .option.disabled{
+    pointer-events: none;
+}
