@@ -5,9 +5,14 @@ const start_btn_paranormal = document.querySelector(".start-btn-paranormal butto
 const rule_box = document.querySelector(".rule_box");
 const quiz_back = document.querySelector(".quiz_back");
 const container_disabled = document.querySelector(".card-container");
+const exit_btn = rule_box.querySelector(".buttons .quit");
+const continue_btn = rule_box.querySelector(".buttons .start");
+const quiz_box = document.querySelector(".quiz_box");
 
 
 let activeCard = "None"
+
+//Card buttons 
 
 start_btn_slasher.onclick =()=>{
     activeCard = "slasher";
@@ -31,4 +36,17 @@ start_btn_paranormal.onclick =()=>{
     quiz_back.classList.add("activeBack");
     rule_box.classList.add("activeInfo");
     paranormalWrap.classList.add("noHover");
+}
+
+// Rule box Exit Button
+
+exit_btn.onclick =()=>{
+    rule_box.classList.remove("activeInfo");
+}
+
+// Rule Box Play Button
+
+continue_btn.onclick =()=>{
+    rule_box.classList.remove("activeInfo");
+    quiz_box.classList.add("activeQuiz");
 }
