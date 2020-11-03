@@ -215,6 +215,11 @@ View my wireframes [here](img/t-error.pdf).
 
 **During development**
 
+* I had a major issue with my script.js file after everything was done because of this issue:
+![Issue](img/issue.png)
+
+I did not understand what was going on but it stopped my javascript from working and couldn't get help so I created a second script file and copy/pasted step by step code from the first "dirty" repository I worked on. I then deleted the damaged script file, but it also deleted all my commits on that file...
+You can find the code from **the first "dirty" repository here : https://github.com/AudreyLL88/terror_v1.git**
 
 ## Deployment ##
 ---
