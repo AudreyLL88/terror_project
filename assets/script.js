@@ -7,7 +7,6 @@ const container_disabled = document.querySelector(".card-container");
 const slasherWrap = document.querySelector(".card-wrap1");
 const monsterWrap = document.querySelector(".card-wrap3");
 const paranormalWrap = document.querySelector(".card-wrap2");
-const exit_btn = rule_box.querySelector(".buttons .quit");
 const continue_btn = rule_box.querySelector(".buttons .start");
 const quiz_box = document.querySelector(".quiz_box");
 const option_list = document.querySelector(".option_list");
