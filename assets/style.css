@@ -441,3 +441,71 @@ text-align: center;
 .next_btn:hover{
     background: #d3394c;
 }
+
+.result_box,
+.final_box{
+    align-items: center;
+    background: #0e1111;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 80%;
+    opacity: 0;
+    padding: 25px 30px;
+    pointer-events: none;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(0.5);
+    width: 450px;
+}
+
+.result_box .icon,
+.final_box .icon  {
+    color: white;
+    font-size: 100px;
+    margin-bottom: 10px;
+}
+
+.result_box .score_text
+.final_box .score_text{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.result_box .card_score span
+.final_box .final_score span {
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.result_box .buttons,
+.final_box .buttons{
+    display: flex;
+    margin: 20px 0;
+}
+
+.result_box .buttons button,
+.final_box .buttons button{
+    border-radius: 5px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    height: 45px;
+    margin: 0 10px;
+    outline: none;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+}
+
+.buttons button.next_card{
+    color: white;
+    background: #bf0000
+}
+
+.buttons button.next_card:hover{
+    background: #d3394c;
+    color: #fff;
+}
