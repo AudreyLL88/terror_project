@@ -102,9 +102,98 @@ text-align: center;
 }
 
 .card-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
    margin: auto;
    padding: 60px 30px;
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap;
 }
+
+.card-wrap1 {
+   flex: 1;
+   height: 380px;
+   margin: 0 15px 30px;
+   min-width: 300px;
+   max-width: 380px;
+   perspective: 200rem;
+   width: 300px;
+}
+
+.card-wrap1:hover .flipper {
+   transform: rotateY(180deg);
+}
+
+.flipper {
+   border-radius: 10px;
+   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+   height: 100%;
+   position: relative; 
+   transition: transform 1s;
+   transform-style: preserve-3d; 
+   width: 100%;
+}
+
+.card-front, .card-back {
+   background-color: #0e1111;
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+   border-radius: 10px;
+   height: 100%;
+   position: absolute;
+   width: 100%;
+}
+
+.front-img {
+   background-size: cover;
+   background-position: center;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;;
+   height: 380px;
+}
+
+.card-back {
+   align-items: center;
+   background-color:#0e1111;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 30px;
+   transform: rotateY(180deg);
+}
+
+.slasher_img{ 
+    border-radius: 50%;
+    height: 150px; 
+    margin-bottom: 10px; 
+    width: 150px;
+}
+
+.card-back h2{
+   font-weight: bold;
+   font-size: 1.2rem;
+   padding-top: 8px;
+   text-align: center;
+}
+
+.card-back p {
+   line-height: 1.6;
+   margin-top: 10px;
+   text-align: center;
+   padding-bottom: 10px;
+}
+
+.card-back button{
+   background-color: #bf0000;
+   border: 1px solid white;
+   border-radius: 5px;
+   color: #ffffff;
+   font-size: 0.8em;
+   font-weight: bold;
+   letter-spacing: 0.05em;
+   padding: 10px 14px;
+   text-transform: uppercase;
+   text-decoration: none;
+}
+
