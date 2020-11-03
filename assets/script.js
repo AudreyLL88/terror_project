@@ -59,6 +59,8 @@ continue_btn.onclick =()=>{
 let que_count =  0;
 let que_numb = 1;
 let counter;
+let userScore = 0;
+let totalScore = 0;
 let questionsArray;
 
 const next_btn = quiz_box.querySelector(".next_btn");
@@ -99,6 +101,8 @@ function optionSelected(answer){
     let correctAns = questionsArray[que_count].answer;
     const allOptions = option_list.children.length;
     if(userAns == correctAns){
+        userScore += 1;
+        totalScore += 1;
         console.log(userScore);
         answer.classList.add("correct");
         console.log("Answer is correct");
@@ -113,4 +117,20 @@ function optionSelected(answer){
             }
         }
     }
+    for(i=0; i < allOptions; i++){
+        option_list.children[i].classList.add("disabled"); 
+    }
+    next_btn.style.display = "block";
+}
+//Next button 
+next_btn.onclick =()=>{
+   if(que_count < questions1.length -1){
+        que_count++;
+        que_numb++;
+    showQuestions(que_count);
+    next_btn.style.display = "none";
+   }else{
+       console.log("Questions completed");
+       showResult();
+   };
 }
