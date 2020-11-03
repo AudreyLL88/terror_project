@@ -351,10 +351,8 @@ text-align: center;
     display: flex;
     height: 45px;
     justify-content: space-between;
-    min-width: 100px;
-    min-height: 40px ;
     padding: 0 8px;
-    width: 145px;
+    width: 55px;
 }
 
 .timer_sec{
