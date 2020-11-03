@@ -1,23 +1,23 @@
+//getting all required elements
 const start_btn_slasher = document.querySelector(".start-btn-slasher button");
 const start_btn_monster = document.querySelector(".start-btn-monster button");
 const start_btn_paranormal = document.querySelector(".start-btn-paranormal button");
 const rule_box = document.querySelector(".rule_box");
-const quiz_back = document.querySelector(".quiz_back");
-const container_disabled = document.querySelector(".card-container");
-const slasherWrap = document.querySelector(".card-wrap1");
-const monsterWrap = document.querySelector(".card-wrap3");
-const paranormalWrap = document.querySelector(".card-wrap2");
+const exit_btn = rule_box.querySelector(".buttons .quit");
 const continue_btn = rule_box.querySelector(".buttons .start");
 const quiz_box = document.querySelector(".quiz_box");
 const option_list = document.querySelector(".option_list");
 const timeCount = document.querySelector(".timer .timer_sec");
+const timeOff = document.querySelector("header .time_text");
+const slasherWrap = document.querySelector(".card-wrap1");
+const monsterWrap = document.querySelector(".card-wrap3");
+const paranormalWrap = document.querySelector(".card-wrap2");
+const quiz_back = document.querySelector(".quiz_back");
+const container_disabled = document.querySelector(".card-container");
 const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const next_card = result_box.querySelector(".buttons .next_card");
 const final_box = document.querySelector(".final_box");
-const exit_btn = rule_box.querySelector(".buttons .quit");
-const continue_btn = rule_box.querySelector(".buttons .start");
-const quiz_box = document.querySelector(".quiz_box");
 
 let activeCard = "None"
 
@@ -47,20 +47,14 @@ start_btn_paranormal.onclick =()=>{
     paranormalWrap.classList.add("noHover");
 }
 
-// Rule box Exit Button
-
-exit_btn.onclick =()=>{
-    rule_box.classList.remove("activeInfo");
-}
-
 // Rule Box Play Button
 
 continue_btn.onclick =()=>{
     rule_box.classList.remove("activeInfo");
     quiz_box.classList.add("activeQuiz");
-     showQuestions(0);
-     queCounter(1);
-     startTimer(15);
+    showQuestions(0);
+    queCounter(1);
+    startTimer(15);
 }
 
 //Quiz box 
@@ -72,9 +66,8 @@ let timeValue = 15;
 let userScore = 0;
 let totalScore = 0;
 let cardCount = 0;
-let questionsArray;
 
-//Quizz box questions/answers from array in questions.js
+let questionsArray;
 
 function showQuestions(index){
     let questionCategory = "None"
@@ -103,9 +96,10 @@ function showQuestions(index){
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
+
 //Allow to select function and display correct/wrong answers
 
-function optionSelected(answer){
+function  optionSelected(answer){
     clearInterval(counter);
     let userAns = answer.textContent;
     let correctAns = questionsArray[que_count].answer;
@@ -127,6 +121,7 @@ function optionSelected(answer){
             }
         }
     }
+    
     for(i=0; i < allOptions; i++){
         option_list.children[i].classList.add("disabled"); 
     }
@@ -136,7 +131,7 @@ function optionSelected(answer){
 //Next button display
 
 next_btn.onclick =()=>{
-   if(que_count < questionsArray.length -1){
+   if(que_count < questions1.length -1){
         que_count++;
         que_numb++;
     showQuestions(que_count);
@@ -168,17 +163,16 @@ function startTimer(time){
         if(time < 9){
             let addZero = timeCount.textContent;
             timeCount.textContent = "0" + addZero;
-        }
-        if(time < 0){
+        }if(time < 0){
             clearInterval(counter);
              timeCount.textContent = "00";
-        } 
+        }   
     }
 }
 
 // Card result box
 
-function showResult(){
+    function showResult(){
     console.log("total score " + totalScore);
     cardCount += 1;
     console.log("card count " + cardCount);
@@ -189,12 +183,10 @@ function showResult(){
     if (userScore > 3){ 
         let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questionsArray.length +'</p></span>';
         cardScore.innerHTML = scoreTag;  
-    }
-    else if(userScore > 1){ 
+    }else if(userScore > 1){ 
         let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questionsArray.length +'</p></span>';
         cardScore.innerHTML = scoreTag;
-    }
-    else{ 
+    }else{ 
         let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questionsArray.length +'</p></span>';
         cardScore.innerHTML = scoreTag;
     }
@@ -208,10 +200,10 @@ next_card.onclick = ()=>{
     que_count = 0;
     que_numb = 1;
     userScore = 0;
+    widthValue = 0;
     if(cardCount >= 3){
         showFinal();
-    }
-    else{
+    }else{
         container_disabled.classList.remove("disabled");
         quiz_back.classList.remove("activeBack");
     }
