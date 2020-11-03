@@ -56,7 +56,14 @@ continue_btn.onclick =()=>{
      showQuestions(0);
 }
 
+let que_count =  0;
+let que_numb = 1;
+let counter;
 let questionsArray;
+
+const next_btn = quiz_box.querySelector(".next_btn");
+
+//Quizz box questions/answers from array in questions.js
 
 function showQuestions(index){
     let questionCategory = "None"
@@ -83,5 +90,27 @@ function showQuestions(index){
     const option = option_list.querySelectorAll(".option");
     for(i=0; i < option.length; i++){
         option[i].setAttribute("onclick", "optionSelected(this)");
+    }
+}
+//Allow to select function and display correct/wrong answers
+
+function optionSelected(answer){
+    let userAns = answer.textContent;
+    let correctAns = questionsArray[que_count].answer;
+    const allOptions = option_list.children.length;
+    if(userAns == correctAns){
+        console.log(userScore);
+        answer.classList.add("correct");
+        console.log("Answer is correct");
+
+    }else{
+        answer.classList.add("incorrect");
+         console.log("Answer is wrong");
+
+         for (i = 0; i < allOptions; i++) {
+            if(option_list.children[i].textContent == correctAns){
+            option_list.children[i].setAttribute("class", "option correct")
+            }
+        }
     }
 }
