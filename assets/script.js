@@ -254,13 +254,13 @@ function startTimer(time){
     result_box.classList.add("activeResult"); 
     const cardScore = result_box.querySelector(".card_score");
     if (userScore > 3){ 
-        let scoreTag = `<span>You survived this time... You have <p>${userScore}</p> out of <p>${questionsArray.length}</p></span>`;
+        let scoreTag = `<p>You survived this time... You have <span>${userScore}</span> out of <span>${questionsArray.length}</span> questions.</p>`;
         cardScore.innerHTML = scoreTag;  
     }else if(userScore > 2){ 
-        let scoreTag = `<span>You barely made it... You have <p>${userScore}</p> out of <p>${questionsArray.length}</p></span>`;
+        let scoreTag = `<p>You barely made it... You have <span>${userScore}</span> out of <span>${questionsArray.length}</span> questions.</p>`;
         cardScore.innerHTML = scoreTag;
     }else{ 
-        let scoreTag = `<span> You disappeared! You only have <p>${userScore}</p> out of <p>${questionsArray.length}</p></span>`;
+        let scoreTag = `<p> You disappeared! You have only <span>${userScore}</span> out of <span>${questionsArray.length}</span> questions.</p>`;
         cardScore.innerHTML = scoreTag;
     }
 }
@@ -288,16 +288,30 @@ function showFinal(){
     result_box.classList.remove("activeResult"); 
     final_box.classList.add("activeFinal");
     const finalText = final_box.querySelector(".final_score");
-    if (userScore == 15){ 
-        let finalTag = '<span>and congrats! 🎉, You got <p>'+ totalScore +'</p></span>';
+    const final_title = document.querySelector(".final_title");
+    if (totalScore == 15){ 
+        final_title.innerHTML = results[0].score; 
+        let finalTag = `<p>You know too much, maybe it was you all along! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`;
         finalText.innerHTML = finalTag;  
     }
-    else if(userScore > 10){ 
-        let finalTag = '<span>and nice 😎, You got only <p>'+ totalScore +'</p></span>';
+    else if(totalScore >= 13){ 
+        final_title.innerHTML = results[1].score; 
+        let finalTag = `<p>You survived! You are pure but traumatised forever, yay! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`;
         finalText.innerHTML = finalTag;
     }
-    else{ 
-        let finalTag = '<span>and sorry 😐, You got only <p>'+ totalScore +'</p></span>';
+    else if(totalScore >= 8){ 
+        final_title.innerHTML = results[2].score; 
+        let finalTag = `<p>You acted like a hero now you suffer for it! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`;
+        finalText.innerHTML = finalTag;
+    }
+    else if(totalScore >= 3){ 
+        final_title.innerHTML = results[3].score; 
+        let finalTag = `<p>You fool! You should have stayed with the group! You only have <span>${totalScore}</span> out of <span>15</span> questions.</p>`;
+        finalText.innerHTML = finalTag;
+    }
+     else { 
+        final_title.innerHTML = results[4].score; 
+        let finalTag = `<p>You just had to go and look didn't you? You only have <span>${totalScore}</span> out of <span>15</span> questions.</p>`;
         finalText.innerHTML = finalTag;
     }
 };

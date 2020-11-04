@@ -15,6 +15,7 @@ html, body {
     background: #403B4A; 
     background: -webkit-linear-gradient(to right, #E7E9BB, #403B4A);  
     background: linear-gradient(to right, #E7E9BB, #403B4A);
+    min-height: 100vh;
 }
 
 h1,
@@ -569,18 +570,23 @@ h3 {
     font-weight: 500;
 }
 
-.card_score span,
-.final_score span {
-    display: flex;
-    font-size: 18px;
-    font-weight: 500;
+.final_title {
+    font-size: 25px;
+    font-weight: 600;
+    color: red;
 }
 
-.card_score span p,
-.final_score span p {
-    padding: 0 4px;
+.card_score span,
+.final_score span {
+    color: red;
     font-weight: 600;
-    display: flex;
+    padding: 0 4px;
+}
+
+.card_score p ,
+.final_score p {
+    font-size: 18px;
+    font-weight: 500;
 }
 
 
