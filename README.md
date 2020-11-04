@@ -9,7 +9,6 @@
     * [Project Goals](#project-goals)
     * [User Goals](#user-goals)
     * [User Stories](#user-stories)
-    * [Site Owner Goals](#site-owner-goals)
     * [User Requirements and Expectations](#requirements)
     * [Design Choices](#design-choices)
         * [Fonts](#fonts)
@@ -45,40 +44,29 @@ The **goal** for this project is to create an **horror-oriented timed quizz** ca
 <a name="user-stories"></a>
 ### User Stories ### 
 
-* The **user** wants an **attractive game**.
+* The **user** wants an **attractive game** witha **non-distracting** background.
 * The **user** wants **clear instructions**
 * The **user** wants to be **challenged** in his/her/their **knowledge** of **horror movies**.
 * The **user** wants to have **diversity** in question difficulty.
+* The **user** wants to **know** when a **level is completed**.
+*  The **user** wants to **know** when  **the game is over**.
 * The **user** wants to get a maximum of points.
 * The **user** wants to **survive** the game.
+*  The **user** wants to **have the possibility** to **play again**.
 
-<a name="site-owner-goals"></a>
-### Site Owner Goals ###
-
-All **site owner** goals have to be read aloud as a **Baseline Test** from **Blade Runner**
-
-*
-
-
-### User Requirements and Expectations ###
 
 <a name="requirements"></a>
 
-### Requirements ###
+### Research ###
 
-* 
-
-
-**Expectations**
-
-*
+* When developing this **game**, I kept in mind that the aesthetic should be inspired by Horror Movies. I tried to create a moody and slightly unnerving ambiance for the landing page and a cleaner, colder approach for the card page.
+* I checked **previously made horror quizz** and watched **many horror movies** for **trivia**.
+* I found a [**Youtube quizz tutorial**](https://www.youtube.com/watch?v=pQr4O1OITJo) that I first **coded along** in this [**repository**](https://github.com/AudreyLL88/quizz) and adapted to my needs.
 
 <a name="design-choices"></a>
 
 ### Design Choices ###
 ---
-* When developing this **game**, I kept in mind that the aesthetic should be inspired by Horror Movies. I tried to create a moody and slightly unnerving ambiance for the landing page and a cleaner, colder approach for the card page.
-* I found a [**Youtube quizz tutorial**](https://www.youtube.com/watch?v=pQr4O1OITJo) that I first **coded along** in this [**repository**](https://github.com/AudreyLL88/quizz) and adapted to my needs.
 
 <a name="fonts"></a>
 
@@ -167,7 +155,8 @@ View my wireframes [here](img/t-error.pdf).
 * I also tested my website on **different browsers and real devices** : **Iphone 6s, Iphone X, Ipad Pro 12", Macbook air and Samsung Galaxy S20.**
 * I used a first **dirty version** of this project on **Gitpod** and **refactored** my code **step by step** to remove any **useless classes**
 * I tested my CSS file and my HTML files using [**CSS Validator**](https://jigsaw.w3.org/css-validator/) and [**HTML Validator**](https://validator.w3.org/).
-* All pages passed the HTML and CSS validator final test.
+* I tested my Javascript files with [**JSHint**](https://jshint.com/).
+* All pages passed the HTML,CSS and JS validator final test with no major issues.
 
 **Responsiveness**
 
