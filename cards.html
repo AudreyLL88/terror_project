@@ -9,15 +9,23 @@
 </head>
 <body>
 
+<!-- USERNAME SECTION-->
+
+<header id="username-container">
+    <h3>Create a Username</h3>
+    <input type="text" id="username" placeholder="Your username" required>
+    <button id="username-btn">Start</button>
+</header>
+
 <!-- Instructions and Title-->
-<header id="title-container">
+<section id="title-container">
     <h3>Select a Card</h3>
     <p>Play all cards to finish the game.</p>
-</header>
+</section>
 
 <!-- Cards-->
 
-<section class="card-container">
+<div id="card-container">
     <div class="card-wrap1"> 
        <div class="flipper">
            <div class="card-front">
@@ -57,7 +65,7 @@
            </div>
        </div>
    </div>
-</section>
+</div>
 
 <!--Quiz rule box-->
 
@@ -152,6 +160,6 @@
 <div class="quiz_back"></div>
     
 <script src="assets/script.js"></script>
-<script src="assets/questions.js"></script>  
+<script src="assets/questions.js"></script>
 </body>
 </html>

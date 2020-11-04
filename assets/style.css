@@ -97,30 +97,76 @@ h3 {
     h3 {
         font-size: 150%;
     }
+    .result_box,
+    .final_box {
+        display: block;
+    }
 }
 
 /* Card page card section */
 
 #title-container{
-max-width: 1200px;
-margin: auto;
-padding: 60px 30px 0px;
-text-align: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 30px 0px;
+    text-align: center;
+    opacity: 0;
+}
+
+#title-container.fadein {
+  opacity: 2;
+  transition: opacity 1000ms;
 }
 
 #title-container h3 {
     padding-bottom: 15px;
 }
 
-.card-container {
+#username-container {
+   align-items: center;
+    background: #0e1111;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 80%;
+    padding: 25px 30px;
+    text-align: center;
+    width: 450px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    left:50%;
+    position: absolute;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
+#username-container.fadeout {
+   opacity:0;
+   transition: opacity 1000ms;
+   display: none;
+}
+
+#username-btn {
+    color: blue;
+}
+
+#card-container {
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    margin: auto;
    padding: 60px 30px;
+   opacity: 0;
 }
 
-.card-container.disabled {
+#card-container.fadein {
+    opacity: 2;
+    transition: opacity 1000ms;
+}
+
+
+#card-container.disabled {
   display: none;
 }
 
@@ -490,7 +536,7 @@ text-align: center;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 80%;
     opacity: 0;
     padding: 25px 30px;
@@ -507,19 +553,26 @@ text-align: center;
     margin-bottom: 10px;
 }
 
-.result_box .score_text
-.final_box .score_text{
+.score_text {
     font-size: 20px;
     font-weight: 500;
 }
 
-.result_box .card_score span
-.final_box .final_score span {
+.card_score span,
+.final_score span {
     display: flex;
     font-size: 18px;
     font-weight: 500;
     margin: 10px 0;
 }
+
+.card_score span p,
+.final_score span p {
+    padding: 0 4px;
+    font-weight: 600;
+    display: flex;
+}
+
 
 .result_box .buttons,
 .final_box .buttons{

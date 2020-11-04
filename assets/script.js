@@ -11,15 +11,36 @@ const slasherWrap = document.querySelector(".card-wrap1");
 const monsterWrap = document.querySelector(".card-wrap3");
 const paranormalWrap = document.querySelector(".card-wrap2");
 const quiz_back = document.querySelector(".quiz_back");
-const container_disabled = document.querySelector(".card-container");
+const container_disabled = document.querySelector("#card-container");
 const next_btn = document.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const next_card = document.querySelector(".buttons .next_card");
 const final_box = document.querySelector(".final_box");
+const user_btn = document.getElementById('username-btn');
+const card_container = document.getElementById('card-container');
+const user_container = document.getElementById('username-container');
+const title_container = document.getElementById('title-container');
 
-let activeCard = "None";
+//Showing Cards on username button click
+
+function fadeIn(el){
+  el.classList.add('fadein'); 
+};
+
+function fadeOut(el){
+  el.classList.add('fadeout'); 
+};
+
+user_btn.addEventListener('click', function(){
+  fadeIn(card_container);
+  fadeIn(title_container);
+  fadeOut(user_container);
+  }
+);
 
 //Card buttons 
+
+let activeCard = "none";
 
 start_btn_slasher.onclick =()=>{
     activeCard = "slasher";
@@ -69,7 +90,6 @@ let cardCount = 0;
 let questionsArray;
 
 function showQuestions(index){
-    let questionCategory = "None";
     if(activeCard == "slasher"){
         questionsArray = questions2;
     }
@@ -180,13 +200,13 @@ function startTimer(time){
     result_box.classList.add("activeResult"); 
     const cardScore = result_box.querySelector(".card_score");
     if (userScore > 3){ 
-        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questionsArray.length +'</p></span>';
+        let scoreTag = `<span>You survived this time... You have <p>${userScore}</p> out of <p>${questionsArray.length}</p></span>`;
         cardScore.innerHTML = scoreTag;  
-    }else if(userScore > 1){ 
-        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questionsArray.length +'</p></span>';
+    }else if(userScore > 2){ 
+        let scoreTag = `<span>You barely made it... You have <p>${userScore}</p> out of <p>${questionsArray.length}</p></span>`;
         cardScore.innerHTML = scoreTag;
     }else{ 
-        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questionsArray.length +'</p></span>';
+        let scoreTag = `<span> You disappeared! You only have <p>${userScore}</p> out of <p>${questionsArray.length}</p></span>`;
         cardScore.innerHTML = scoreTag;
     }
 }
@@ -218,11 +238,12 @@ function showFinal(){
         finalText.innerHTML = finalTag;  
     }
     else if(userScore > 10){ 
-        let finalTag = '<span>and nice 😎, You got <p>'+ totalScore +'</p></span>';
+        let finalTag = '<span>and nice 😎, You got only <p>'+ totalScore +'</p></span>';
         finalText.innerHTML = finalTag;
     }
     else{ 
         let finalTag = '<span>and sorry 😐, You got only <p>'+ totalScore +'</p></span>';
         finalText.innerHTML = finalTag;
     }
-}
+};
+
