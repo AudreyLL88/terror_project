@@ -20,21 +20,67 @@ const user_btn = document.getElementById('username-btn');
 const card_container = document.getElementById('card-container');
 const user_container = document.getElementById('username-container');
 const title_container = document.getElementById('title-container');
+const userInput = document.querySelector("#username");
+
+//Local Storage 
+let saveData = {
+    "slasher card": false,
+    "paranormal card": false,
+    "monster card": false,
+    "total score": 0
+};
+let cardCount = 0;
+
+function saveGame(){
+  localStorage.setItem(username, JSON.stringify(saveData));
+};
+
+function loadGame(){
+  let Data = JSON.parse(localStorage.getItem(username));
+  if(Data == null){
+        console.log("No saved data found");
+  }else{
+      saveData = Data;
+  }
+};
+
+function restoreGameScreen(){
+    console.log("restoring");
+    console.log(saveData);
+    if(saveData["slasher card"] == true){
+        slasherWrap.classList.add("noHover");
+        cardCount += 1;
+    }if(saveData["paranormal card"] == true){
+        paranormalWrap.classList.add("noHover");
+        cardCount += 1;
+    }if(saveData["monster card"] == true){
+     monsterWrap.classList.add("noHover");
+     cardCount += 1;
+    }if(cardCount == 3) {
+        showFinal();
+    }
+}
 
 //Showing Cards on username button click
 
 function fadeIn(el){
-  el.classList.add('fadein'); 
+ el.classList.add('fadein'); 
 };
 
 function fadeOut(el){
   el.classList.add('fadeout'); 
 };
 
+let username;
+
 user_btn.addEventListener('click', function(){
+  username = userInput.value;
   fadeIn(card_container);
   fadeIn(title_container);
   fadeOut(user_container);
+  console.log(username);
+  loadGame();
+  restoreGameScreen();
   }
 );
 
@@ -85,7 +131,6 @@ let counter;
 let timeValue = 15;
 let userScore = 0;
 let totalScore = 0;
-let cardCount = 0;
 
 let questionsArray;
 
@@ -192,6 +237,15 @@ function startTimer(time){
 // Card result box
 
     function showResult(){
+    saveData["total score"] = totalScore;
+    if(activeCard == "slasher"){
+        saveData["slasher card"] = true;
+    }else if(activeCard == "paranormal"){
+        saveData["paranormal card"] = true;
+    }else if(activeCard == "monster"){
+        saveData["monster card"] = true;
+    };
+    saveGame();
     console.log("total score " + totalScore);
     cardCount += 1;
     console.log("card count " + cardCount);
@@ -230,6 +284,7 @@ next_card.onclick = ()=>{
 //Final result box 
 
 function showFinal(){ 
+    localStorage.removeItem(username);
     result_box.classList.remove("activeResult"); 
     final_box.classList.add("activeFinal");
     const finalText = final_box.querySelector(".final_score");
@@ -246,4 +301,5 @@ function showFinal(){
         finalText.innerHTML = finalTag;
     }
 };
+
 

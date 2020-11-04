@@ -26,7 +26,7 @@ let questions1 = [
     {
     category: "Paranormal",
     numb: 3,
-    question: "From which mythology does the demon in The exorcist comes from?",
+    question: "Which mythology does the demon in The exorcist comes from?",
     answer: "The babylonian mythology",
     options: [
       "The egyptian mythology",
@@ -90,7 +90,7 @@ let questions2 = [
     {
     category: "Slasher",
     numb: 3,
-    question: "Where does the opening scene in The Collection takes place?",
+    question: "Where is the opening scene of The Collection",
     answer: "An underground nightclub",
     options: [
       "A suburb house",
@@ -102,13 +102,13 @@ let questions2 = [
     {
     category: "Slasher",
     numb: 4,
-    question: "How does the final girl escape in Texas Chainsaw Massacre?",
-    answer: "Jumping in a pick-up truck",
+    question: "Who is Texas Chainsaw Massacre based on?",
+    answer: "Ed Gein",
     options: [
-      "Running away",
-      "Saved by the police",
-      "Jumping in a pick-up truck",
-      "Swimming away"
+      "Charles Manson",
+      "Ed Gein",
+      "Ted Bundy",
+      "Jeffrey Dahmer"
     ]
   },
     {
@@ -166,19 +166,19 @@ let questions3 = [
     {
     category: "Monsters",
     numb: 4,
-    question: "The Tabonga appears in what monster film?",
+    question: "The Pale Lady appears in which film?",
     answer: "From Hell it came",
     options: [
       "The Thing",
       "From Hell it came",
       "Evil Dead",
-      "Anaconda"
+      "Scary Stories We Tell In The Dark"
     ]
   },
     {
     category: "Monsters",
     numb: 5,
-    question: "What is the setting for The Thing?",
+    question: "Where is the setting for The Thing?",
     answer: "Antartica",
     options: [
       "Greenland",
