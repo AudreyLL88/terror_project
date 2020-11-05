@@ -1,166 +1,158 @@
 <!DOCTYPE html>
 <html ontouchmove lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-erroR</title>
-    <script src="https://kit.fontawesome.com/e55d87b16d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>T-erroR</title>
+      <script src="https://kit.fontawesome.com/e55d87b16d.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="assets/style.css">
+   </head>
+   <body>
+      <!-- Username box-->
+      <div id="username-container">
+         <h3 class="username-text">Enter a username</h3>
+         <p class="username-text">Your username will be saved automatically.</p>
+         <input type="text" id="username" class="username-text" placeholder="Your username" required>
+         <p id="error"></p>
+         <button id="username-btn">Start</button>
+      </div>
 
-<!-- USERNAME SECTION-->
-<div id="username-container">
-        <h3 class="username-text">Enter a username</h3>
-        <p class="username-text">Your username will be saved automatically.</p>
-        <input type="text" id="username" class="username-text" placeholder="Your username" required>
-        <p id="error"></p>
-        <button id="username-btn">Start</button>
-</div>
+      <!-- Instructions and Title-->
+      <section id="title-container">
+         <h3>Select a Card</h3>
+         <p>Play all cards to finish the game.</p>
+      </section>
 
+      <!-- Cards-->
+      <section id="card-container">
+         <div class="card-wrap1">
+            <div class="flipper">
+               <div class="card-front">
+                  <div class="front-img" style="background-image: url('img/card-front.jpg')"></div>
+               </div>
+               <div class="card-back">
+                  <img class="slasher_img" src="img/slasher.jpg" alt="slasher image">
+                  <h2>SLASHER</h2>
+                  <p>Test your knowledge of the Slasher sub-genre! Will you survive ?</p>
+                  <div class="start-btn-slasher"><button>Play Quiz</button></div>
+               </div>
+            </div>
+         </div>
+         <div class="card-wrap2">
+            <div class="flipper">
+               <div class="card-front">
+                  <div class="front-img" style="background-image: url('img/card-front.jpg');"></div>
+               </div>
+               <div class="card-back">
+                  <img class="paranormal_img" src="img/paranormal.jpg" alt="paranormal image">
+                  <h2>Paranormal</h2>
+                  <p>Test your knowledge of the Paranormal sub-genre! Will you survive ?</p>
+                  <div class="start-btn-paranormal"><button>Play Quiz</button></div>
+               </div>
+            </div>
+         </div>
+         <div class="card-wrap3">
+            <div class="flipper">
+               <div class="card-front">
+                  <div class="front-img" style="background-image: url('img/card-front.jpg');"></div>
+               </div>
+               <div class="card-back">
+                  <img class="monster_img" src="img/monster.jpg" alt="Monster image">
+                  <h2>Monster</h2>
+                  <p>Test your knowledge of the Monster sub-genre! Will you survive ?</p>
+                  <div class="start-btn-monster"><button>Play Quiz</button></div>
+               </div>
+            </div>
+         </div>
+      </section>
 
-<!-- Instructions and Title-->
-<section id="title-container">
-    <h3>Select a Card</h3>
-    <p>Play all cards to finish the game.</p>
-</section>
-
-<!-- Cards-->
-
-<div id="card-container">
-    <div class="card-wrap1"> 
-       <div class="flipper">
-           <div class="card-front">
-               <div class="front-img" style="background-image: url('img/card-front.jpg')"></div>
-           </div>
-           <div class="card-back">
-               <img class="slasher_img" src="img/slasher.jpg" alt="slasher image">
-                <h2>SLASHER</h2>
-                <p>Test your knowledge of the Slasher sub-genre! Will you survive ?</p>
-                <div class="start-btn-slasher"><button>Play Quiz</button></div>
-           </div>
-       </div>
-   </div>
-   <div class="card-wrap2"> 
-       <div class="flipper">
-           <div class="card-front">
-               <div class="front-img" style="background-image: url('img/card-front.jpg');"></div>
-           </div>
-           <div class="card-back">
-           <img class="paranormal_img" src="img/paranormal.jpg" alt="paranormal image">
-                <h2>Paranormal</h2>
-                <p>Test your knowledge of the Paranormal sub-genre! Will you survive ?</p>
-             <div class="start-btn-paranormal"><button>Play Quiz</button></div>
-           </div>
-       </div>
-   </div>
-   <div class="card-wrap3">
-       <div class="flipper">
-           <div class="card-front">
-               <div class="front-img" style="background-image: url('img/card-front.jpg');"></div>
-           </div>
-           <div class="card-back">
-                <img class="monster_img" src="img/monster.jpg" alt="Monster image">
-                <h2>Monster</h2>
-                <p>Test your knowledge of the Monster sub-genre! Will you survive ?</p>
-             <div class="start-btn-monster"><button>Play Quiz</button></div>
-           </div>
-       </div>
-   </div>
-</div>
-
-<!--Quiz rule box-->
-
-<div class="rule_box container">
-		<div class="rule_title">
-			<span>Some Rules of this Quiz</span>
-		</div>
-		<div class="rule_list">
-			<div class="rule">1. Answer in <span>15 seconds</span> per question or die.</div>
+      <!--Quiz rule box-->
+      <section class="rule_box container">
+         <div class="rule_title">
+            <span>Some Rules of this Quiz</span>
+         </div>
+         <div class="rule_list">
+            <div class="rule">1. Answer in <span>15 seconds</span> per question or die.</div>
             <div class="rule">2. Double click on the answer to select it.</div>
             <div class="rule">3. You can leave the game at the end of a card</div>
             <div class="rule">4. Remember your username to finish the game later.</div>
-		</div>
-        <div class="buttons">
+         </div>
+         <div class="buttons">
             <a href="index.html"><button class="quit">Exit Quiz</button></a>
             <button class="start">Continue</button>
-        </div>
-	</div>
+         </div>
+      </section>
 
-<!-- Quizz Box-->
-
-    <div class="quiz_box container">
-        <header>
+      <!-- Quizz Box-->
+      <section class="quiz_box container">
+         <header>
             <div class="que_title">Title</div>
             <div class="timer">
-                <div class="timer_sec">15</div>
+               <div class="timer_sec">15</div>
             </div>
-        </header>
-        <section>
+         </header>
+         <section>
             <div class="que_name">
-                <span>Question</span>
+               <span>Question</span>
             </div>
             <div class="option_list">
-                <div class="option">
-                    <span>Option</span>                
-                </div>
-                <div class="option">
-                    <span>Option</span>
-                </div>
-                <div class="option">
-                    <span>Option</span>
-                </div>
-                <div class="option">
-                    <span>Option</span>
-                </div>
+               <div class="option">
+                  <span>Option</span>                
+               </div>
+               <div class="option">
+                  <span>Option</span>
+               </div>
+               <div class="option">
+                  <span>Option</span>
+               </div>
+               <div class="option">
+                  <span>Option</span>
+               </div>
             </div>
-        </section>
+         </section>
 
- <!--Quiz Box footer-->
-        <footer>
+         <!--Quiz Box footer-->
+         <footer>
             <div class="total">
-                <!--<span><p>2</p>Of<p>5</p>Questions</span>-->
+               <!--<span><p>2</p>Of<p>5</p>Questions</span>-->
             </div>
             <button class="next_btn">Next</button>
-        </footer>
-   </div>
+         </footer>
+      </section>
 
-<!--Result Box-->
-
-    <div class="result_box container">
-        <div class="icon">
+      <!--Result Box-->
+      <section class="result_box container">
+         <div class="icon">
             <i class="fas fa-ghost"></i>
-        </div>
-        <div class="score_text">You've completed the Quiz!</div>
-        <div class="card_score">
+         </div>
+         <div class="score_text">You've completed the Quiz!</div>
+         <div class="card_score">
             <!--<span>and sorry, You got only <p>2</p>out of<p>5</p>.</span>-->
-        </div>
-        <div class="buttons">
+         </div>
+         <div class="buttons">
             <a href="index.html"><button class="quit">Quit</button></a>
             <button class="next_card">Continue</button>
-        </div>
-    </div>
+         </div>
+      </section>
 
-<!--Final Box-->
-
-    <div class="final_box container">
-        <img class="final_img" src=" " alt="final image">
-        <div class="final_title">FINAL SCORE</div>
-        <div class="final_score">
+      <!--Final Box-->
+      <section class="final_box container">
+         <img class="final_img" src=" " alt="final image">
+         <div class="final_title">FINAL SCORE</div>
+         <div class="final_score">
             <!--<span>and sorry, You got only <p>2</p>out of<p>5</p>.</span>-->
-        </div>
-        <div class="buttons">
+         </div>
+         <div class="buttons">
             <a href="index.html"><button class="quit">Leave</button></a>
             <a href="cards.html"><button class="restart">Play Again</button></a>
-        </div>
-    </div>
+         </div>
+      </section>
 
-<!--Quizz Background-->
-
-<div class="quiz_back"></div>
-    
-<script src="assets/script.js"></script>
-<script src="assets/questions.js"></script>
-<script src="assets/results.js"></script>
-</body>
+      <!--Quizz Background-->
+      <div class="quiz_back"></div>
+      
+      <script src="assets/script.js"></script>
+      <script src="assets/questions.js"></script>
+      <script src="assets/results.js"></script>
+   </body>
 </html>
