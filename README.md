@@ -45,14 +45,16 @@ The **goal** for this project is to create an **horror-oriented timed quizz** ca
 ### User Stories ### 
 
 * The **user** wants an **attractive game** witha **non-distracting** background.
+* The **user** wants a **personalized** experience and create a **username**
 * The **user** wants **clear instructions**
 * The **user** wants to be **challenged** in his/her/their **knowledge** of **horror movies**.
 * The **user** wants to have **diversity** in question difficulty.
 * The **user** wants to **know** when a **level is completed**.
-*  The **user** wants to **know** when  **the game is over**.
+* The **user** wants to **know** when  **the game is over**.
 * The **user** wants to get a maximum of points.
 * The **user** wants to **survive** the game.
-*  The **user** wants to **have the possibility** to **play again**.
+* The **user** wants his **username** to be **saved** and **start** the game where it was left.
+* The **user** wants to **have the possibility** to **play again**.
 
 
 <a name="requirements"></a>
@@ -60,7 +62,7 @@ The **goal** for this project is to create an **horror-oriented timed quizz** ca
 ### Research ###
 
 * When developing this **game**, I kept in mind that the aesthetic should be inspired by Horror Movies. I tried to create a moody and slightly unnerving ambiance for the landing page and a cleaner, colder approach for the card page.
-* I checked **previously made horror quizz** and watched **many horror movies** for **trivia**.
+* I checked **previously made horror quizz**, used **my own horror movie knowledge** and watched **new horror movies** for **trivia**.
 * I found a [**Youtube quizz tutorial**](https://www.youtube.com/watch?v=pQr4O1OITJo) that I first **coded along** in this [**repository**](https://github.com/AudreyLL88/quizz) and adapted to my needs.
 
 <a name="design-choices"></a>
@@ -104,6 +106,7 @@ For **wireframing** I used the tool [**Balsamiq**](https://balsamiq.com/).
 View my wireframes [here](img/t-error.pdf).
 
 * As you can see this is **a minimal wireframe** and I pushed a few changes for better readability and engagement:
+* I added the **username** box after my **mentor** suggested **local browser storage**.
 * I added **a full-screen hero image** on the landing page.
 * I added a **full-screen background** behind the quizz box rather than letting the cards visible in the background.
 
@@ -118,9 +121,10 @@ View my wireframes [here](img/t-error.pdf).
 * **Pulsing neon title** for attractiveness and engagement.
 * **Cards flipped on hover** as an introduction to the theme and choice management for the user. One card cannot be played multiple times.
 * **Instruction box** displayed on click on the same page as the card game .
-* **Multiple choice quizz box with timer** taking information from an array depending on which card is played .
+* **Multiple choice on click quizz box with timer** taking information from an array depending on which card is played .
 * **Card Score** at the end of each card played.
-* **Final Score** based on each card score when all cards are played.
+* **Final Score** based on each card score when all cards are played with pictures
+* **Local Data storage** in browser so the username can recover his score.
 
 <a name="implemented"></a>
 ### Future implemented features ###
@@ -162,14 +166,19 @@ View my wireframes [here](img/t-error.pdf).
 
 * **Implementation** 
 
-* I used the **Bootstrap** as well as **flexbox and custom CSS media queries** to ensure that the website didn't break on all screen sizes.
+* I used **Bootstrap** (on the landing page only) as well as **flexbox and custom CSS media queries** to ensure that the website didn't break on all screen sizes.
 * To ensure that the **hover** class would work on IOS, I used the poetic attribute **ontouchmove** in the html tag of card.html.
 
-**Cards**
+**Hover Cards**
 
 ![Cards]()
 
 * **Implementation** 
+
+* I decided to section the quizz in **three different horror subgenre: Slasher, Monster and Paranormal**. Each card has a separate design and leads to a different quizz. 
+* I liked the **hover** property better than the **on click** for these cards because I want to let the **user decide** on which card the game will start and end.
+* I used [**this tutorial**](https://1stwebdesigner.com/learn-how-to-create-flip-cards-using-css/) by **Shruti Balasa** to create the cards because they were the closest to what I wanted them to look like.
+* The cards are made only with **HTML5 and CSS3** using **Flexbox** and are **responsive** on all screen sizes.
 
 **Neon Pulsing Title**
 
@@ -177,11 +186,24 @@ View my wireframes [here](img/t-error.pdf).
 
 * **Implementation** 
 
+* As stated above, I wanted to create an **unsettling ambiance** for the landing page. A **Red pulsing neon** title is a reminder of a **distress signal** in the darkness or even a **creepy motel** sign à la **Psycho** by **Alfred Hitchcock**.
+* I used [**this example on CodePen**](https://codepen.io/AllThingsSmitty/pen/VzXrgY) by **Matt Smith** for the **Neon** effect and changed the **colors**.
+* I used [**This CSS3 library**]() for the **pulse effect** and slowed it down a liitle.
+
 **Quizz with timer**
 
 ![Quizz]()
 
 * **Implementation**
+
+* For the **Quizz**, I coded along [**This tutorial**](https://www.youtube.com/watch?v=pQr4O1OITJo) by **CodingNepal** in a **first repository**. Then I added **my own variables** and **design choices** to adapt it to **T-erroR**.
+* The **Quizz** is entirely made with **Javascript**.
+* I decided to **remove** the **timeline** which I found **uncessesary**. 
+* There are **3 different quizzes** with **5 preset questions** each.
+* The **timer** is set to **15sec** and resets at each questions.
+* The **questions and options** of **each quizz** are **stored** in **a multi-dimentional array** then passed in **the linked html file** through a **function**.
+* The **quizz** allows the user to select **one option** and immediately shows to the **user** if he/she/they **selected** the **right or wrong** answer with a **color code**.
+* The **Next button** displays **only after** an option has been **selected**.
 
 **Card Score**
 
@@ -189,18 +211,38 @@ View my wireframes [here](img/t-error.pdf).
 
 * **Implementation**
 
+* Each **card** is linked to a **card counter** variable passed in a **function** which allows to **separate the scores per cards** and **disable the cards that are already played**.
+* The **Card Score** is entirely made with **Javascript**.
+* At the **end** of each **quizz** a **result box** appears, stating the **card score** and giving a **customized message** stating the **user's status in the game** depending on the **card score**.
+* There are **3 different status** depending on the **score**: **Survivor**, **Barely Made it** and **Missing** .
+
 **Final Score**
 
 ![Scorecard]()
 
 * **Implementation**
 
+* Once **all 3 cards** are played, **regardless of the order**, **the final box appears** and marks the **end of the game**
+* The **Final Score** is entirely made with **Javascript**.
+* The **Final score** is based on the **total score** variable which is stored in the **function** that **allows options to be selected** during the quizz and set **right and wrong answers** .
+* The **final score** box gives a **custom status** from an array informing the user if the survived the game or not. The status include an **image**, a **title**, a **message** and the **score**.
+* There are **5 different status**: **Killer** if the score equals 15, **Final Girl** if the score is above 13, **Critical Condition** if the score is between 8 and 13, **Brutally Murdered** if the score is between 8 and 3 and **That Blonde extra** for score between 0 and 3.
+
+**Local Browser Storage**
+
+![Scorecard]()
+
+* **Implementation**
+
+* This **feature** was made using the **localStorage** property in **Javascript**
+* The **user** enter a **username before the game starts** saved in a **variable** and passed in a **function** which will be **stored in the browser automatically**.
+* **Each time** a **card** is played a **function** automatically **saves the game**.
+* If the **user** decides to **quit the game** while there are still **cards to play**, he/she/they can re-enter their **username** and the **game will be back where it was left**.
+* When the **game is over**, the **previous data** is **deleted** so the **user** can play **again** starting from the beginning.
 
 <a name="issues"></a>
-
 ## Issues ##
 ---
-
 
 **During development**
 
@@ -224,7 +266,7 @@ You can find the code from **the first "dirty" repository here : https://github.
 
 **Cloning ?** No problem:
 
-* In my repository **AudreyLL88/terror_project**, click on the **"Code** green button, **copy in clipboard the HTTPS link**, open your **browser** and look through my files.
+* In my repository **AudreyLL88/terror_project**, click on the **"Code** green button, **copy in clipboard the HTTPS link**, open your **IDE** and look through my files.
 * The link : **https://github.com/AudreyLL88/terror_project.git**
 
 <a name="credits"></a>
