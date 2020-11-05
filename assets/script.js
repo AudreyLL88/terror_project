@@ -67,8 +67,6 @@ function loadGame(){
 
 //Restoring of the cards played/already played
 function restoreGameScreen(){
-    console.log("restoring");
-    console.log(saveData);
     if(saveData["slasher card"] == true){
         slasherWrap.classList.add("noHover"); //removes hover on card
         cardCount += 1; //add to card counter
@@ -98,7 +96,7 @@ user_btn.addEventListener('click', function(){
   if(username == ""){
       const error = document.querySelector("#error");
       error.innerHTML = "Please enter a valid username";
-      return;
+      return; //required password
   }
   fadeIn(card_container); //card container fade in
   fadeIn(title_container); //title container fade in
@@ -313,31 +311,31 @@ function showFinal(){
     const final_title = document.querySelector(".final_title");
     const final_img = document.querySelector(".final_img");
     if (totalScore == 15){ 
-        final_img.src = results[0].image;
+        final_img.src = results[0].image; //update image from array
         final_title.innerHTML = results[0].score; //select title from result.js array depending on score
         let finalTag = `<p>You know too much, maybe it was you all along! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`; //create different span depending on the score
         finalText.innerHTML = finalTag;  
     }
     else if(totalScore >= 13){ 
-        final_img.src = results[1].image;
+        final_img.src = results[1].image; //update image from array
         final_title.innerHTML = results[1].score;  //select title from result.js array depending on score
         let finalTag = `<p>You survived! You are pure but traumatised forever, yay! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`; //create different span depending on the score
         finalText.innerHTML = finalTag;  //insert span in HTML
     }
     else if(totalScore >= 8){ 
-        final_img.src = results[2].image;
+        final_img.src = results[2].image; //update image from array
         final_title.innerHTML = results[2].score;  //select title from result.js array depending on score
         let finalTag = `<p>You acted like a hero now you suffer for it! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`; //create different span depending on the score
         finalText.innerHTML = finalTag;  //insert span in HTML
     }
     else if(totalScore >= 3){ 
-        final_img.src = results[3].image;
+        final_img.src = results[3].image; //update image from array
         final_title.innerHTML = results[3].score;  //select title from result.js array depending on score
         let finalTag = `<p>You fool! You should have stayed with the group! You only have <span>${totalScore}</span> out of <span>15</span> questions.</p>`; //create different span depending on the score
         finalText.innerHTML = finalTag;  //insert span in HTML
     }
      else { 
-        final_img.src = results[4].image;
+        final_img.src = results[4].image; //update image from array
         final_title.innerHTML = results[4].score;  //select title from result.js array depending on score
         let finalTag = `<p>You just had to go and look didn't you? You only have <span>${totalScore}</span> out of <span>15</span> questions.</p>`; //create different span depending on the score
         finalText.innerHTML = finalTag;  //insert span in HTML

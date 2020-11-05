@@ -237,6 +237,7 @@ View my wireframes [here](img/t-error.pdf).
 
 * This **feature** was made using the [**localStorage**](https://www.w3schools.com/jsref/prop_win_localstorage.asp) property in **Javascript**
 * The **user** enter a **username before the game starts** saved in a **variable** and passed in a **function** which will be **stored in the browser automatically**.
+* The **username** is **mandatory** to play the game.
 * **Each time** a **card** is played a **function** automatically **saves the game**.
 * If the **user** decides to **quit the game** while there are still **cards to play**, he/she/they can re-enter their **username** and the **game will be back where it was left**.
 * When the **game is over**, the **previous data** is **deleted** so the **user** can play **again** starting from the beginning.
