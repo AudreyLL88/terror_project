@@ -26,7 +26,7 @@ let questions1 = [
     {
     category: "Paranormal",
     numb: 3,
-    question: "Which mythology does the demon in The exorcist comes from?",
+    question: "Which mythology is The exorcist based on?",
     answer: "The babylonian mythology",
     options: [
       "The egyptian mythology",
@@ -114,7 +114,7 @@ let questions2 = [
     {
     category: "Slasher",
     numb: 5,
-    question: "In Scream, what does the killer ask on the phone?",
+    question: "In Scream, what ask the killer on the phone?",
     answer: "Do you like scary movies?",
     options: [
       "Knock knock?",
@@ -167,7 +167,7 @@ let questions3 = [
     category: "Monsters",
     numb: 4,
     question: "The Pale Lady appears in which film?",
-    answer: "From Hell it came",
+    answer: "Scary Stories We Tell In The Dark",
     options: [
       "The Thing",
       "From Hell it came",

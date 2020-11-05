@@ -133,6 +133,10 @@ h3 {
     margin-bottom: 15px;
 }
 
+#error {
+    padding-bottom: 10px;
+}
+
 #username-btn {
     background-color: #bf0000;
    border: 1px solid white;
@@ -251,6 +255,7 @@ h3 {
 .slasher_img,
 .monster_img,
 .paranormal_img{ 
+    border: 1px solid #bf0000;
     border-radius: 50%;
     height: 150px; 
     margin-bottom: 10px; 
@@ -273,7 +278,7 @@ h3 {
 
 .card-back button{
    background-color: #bf0000;
-   border: 1px solid white;
+   border: 2px solid white;
    border-radius: 5px;
    color: #ffffff;
    font-size: 0.8em;
@@ -408,7 +413,7 @@ h3 {
 }
 
 .que_title{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -444,7 +449,7 @@ h3 {
 }
 
 .que_name{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 600;
 }
 
@@ -460,7 +465,7 @@ h3 {
     border-radius: 5px;
     cursor: pointer;
     display: flex;
-    font-size: 17px;
+    font-size: 15px;
     justify-content: space-between;
     margin-bottom: 15px;
     padding: 8px 15px;
@@ -533,6 +538,7 @@ h3 {
     font-size: 18px;
     font-weight: 400;
     height: 40px;
+    margin-bottom: 8px;
     outline: none;
     padding: 0 13px;
     transition: all 0.3s ease;
@@ -572,6 +578,7 @@ h3 {
 }
 
 .final_img{ 
+    border: 2px solid #bf0000;
     border-radius: 50%;
     height: 200px; 
     margin-bottom: 10px; 
