@@ -204,6 +204,7 @@ View my wireframes [here](img/t-error.pdf).
 * The **questions and options** of **each quizz** are **stored** in **a multi-dimentional array** then passed in **the linked html file** through a **function**.
 * The **quizz** allows the user to select **one option** and immediately shows to the **user** if he/she/they **selected** the **right or wrong** answer with a **color code**.
 * The **Next button** displays **only after** an option has been **selected**.
+* When the **timer is over**, the **quizz** **automatically** shows the **correct answer** and displays the **next button**.
 
 **Card Score**
 
@@ -234,7 +235,7 @@ View my wireframes [here](img/t-error.pdf).
 
 * **Implementation**
 
-* This **feature** was made using the **localStorage** property in **Javascript**
+* This **feature** was made using the [**localStorage**](https://www.w3schools.com/jsref/prop_win_localstorage.asp) property in **Javascript**
 * The **user** enter a **username before the game starts** saved in a **variable** and passed in a **function** which will be **stored in the browser automatically**.
 * **Each time** a **card** is played a **function** automatically **saves the game**.
 * If the **user** decides to **quit the game** while there are still **cards to play**, he/she/they can re-enter their **username** and the **game will be back where it was left**.
@@ -262,7 +263,7 @@ You can find the code from **the first "dirty" repository here : https://github.
 * Clicked on **"settings"** in the navigation bar
 * In the **GitHub Pages** I selected **Master Branch** and **/root** in the dropdown menu and clicked **Save**
 * I waited 2 minutes.
-* And voila! **The website is now live on**
+* And voila! **The website is now live on https://audreyll88.github.io/terror_project/**.
 
 **Cloning ?** No problem:
 
