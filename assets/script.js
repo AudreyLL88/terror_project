@@ -237,7 +237,19 @@ function startTimer(time){
         }if(time < 0){
             clearInterval(counter);
              timeCount.textContent = "00"; //stops timer at 00
-        }   
+             const allOptions = option_list.children.length; //gett options items
+             let correcAns = questionsArray[que_count].answer; //correct answer from questions array
+             for(i=0; i < allOptions; i++){
+                if(option_list.children[i].textContent == correcAns){ //match option to correct answer
+                    option_list.children[i].setAttribute("class", "option correct"); //adding green color answer
+                    console.log("Time Off: Auto selected correct answer.");
+                }
+            }
+            for(i=0; i < allOptions; i++){
+                option_list.children[i].classList.add("disabled"); // disable all options
+            }
+            next_btn.style.display = "block"; //show the buttons once option is selected
+        }
     }
 }
 
