@@ -139,7 +139,7 @@ h3 {
 }
 
 #username-container input::placeholder {
-    padding: 10px;
+    padding-left: 10px;
 }
 
 #error {
