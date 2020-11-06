@@ -133,6 +133,15 @@ h3 {
 	margin-bottom: 15px;
 }
 
+#username-container input[type="text"] {
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+#username-container input::placeholder {
+    padding: 10px;
+}
+
 #error {
 	padding-bottom: 10px;
 }

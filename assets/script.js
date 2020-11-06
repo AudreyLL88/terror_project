@@ -54,7 +54,7 @@ let i;
 
 //Save game data 
 function saveGame(){
-  localStorage.setItem(username, JSON.stringify(saveData));
+  localStorage.setItem(username.toLowerCase(), JSON.stringify(saveData));
 } 
 
  //load previous username or create username
