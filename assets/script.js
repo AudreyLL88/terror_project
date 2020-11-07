@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
-//Buttons const
+
+// Buttons const
 const start_btn_slasher = document.querySelector(".start-btn-slasher button");// slasher card button
 const start_btn_monster = document.querySelector(".start-btn-monster button"); // monster card button
 const start_btn_paranormal = document.querySelector(".start-btn-paranormal button"); // paranormal card button
@@ -8,7 +9,7 @@ const next_btn = document.querySelector(".next_btn"); // Next button in Quiz box
 const user_btn = document.getElementById('username-btn'); // Start button in username box
 const next_card = document.querySelector(".buttons .next_card"); // Result box next button
 
-//Boxes and containers const
+// Boxes and containers const
 const rule_box = document.querySelector(".rule_box");
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
@@ -19,19 +20,19 @@ const card_container = document.getElementById('card-container'); // card contai
 const user_container = document.getElementById('username-container');
 const title_container = document.getElementById('title-container'); // title container fade in
 
-//Card wraps const
+// Card wraps const
 const slasherWrap = document.querySelector(".card-wrap1"); // card wrap slasher card
 const monsterWrap = document.querySelector(".card-wrap3"); // card wrap monster card
 const paranormalWrap = document.querySelector(".card-wrap2"); // card wrap paranormal card
 
-//Quiz Box const
+// Quiz Box const
 const option_list = document.querySelector(".option_list"); // select options for quizz
 const timeCount = document.querySelector(".timer .timer_sec"); // timer 
 
-//Local storage const
+// Local storage const
 const userInput = document.querySelector("#username"); // Username data
 
-//Variables 
+// Variables 
 let activeCard = "none"; // check cards played/non played
 let cardCount = 0; // card counter
 let questionsArray; // stores question arrays
@@ -50,14 +51,14 @@ let saveData = {
 let counter;
 let i;
 
-//Local Storage 
+// Local Storage 
 
-//Save game data 
+// Save game data 
 function saveGame(){
   localStorage.setItem(username.toLowerCase(), JSON.stringify(saveData));
 } 
 
- //load previous username or create username
+ // Load previous username or create username
 function loadGame(){
   let Data = JSON.parse(localStorage.getItem(username));
   if(Data == null){
@@ -111,31 +112,15 @@ user_btn.addEventListener('click', function(){
   }
 );
 
-// Card buttons 
+//Card Buttons
 
-start_btn_slasher.onclick =()=>{
-    activeCard = "slasher"; // check active card
-    container_disabled.classList.add("disabled"); // removes card container
-    quiz_back.classList.add("activeBack"); // activates quiz background
-    rule_box.classList.add("activeInfo"); // activate rule box
-    slasherWrap.classList.add("noHover");// removes hover from the played card
-}; //
-
-start_btn_monster.onclick =()=>{
-    activeCard = "monster"; // check active card
-    container_disabled.classList.add("disabled");// removes card container
-    quiz_back.classList.add("activeBack");// activates quiz background
-    rule_box.classList.add("activeInfo");// activate rule box
-    monsterWrap.classList.add("noHover");// removes hover from the played card
-};
-
-start_btn_paranormal.onclick =()=>{
-    activeCard = "paranormal";// check active card
-    container_disabled.classList.add("disabled");// removes card container
-    quiz_back.classList.add("activeBack");// activates quiz background
-    rule_box.classList.add("activeInfo");// activate rule box
-    paranormalWrap.classList.add("noHover");// removes hover from the played card
-};
+    [[start_btn_slasher, "slasher", slasherWrap], [start_btn_monster, "monster", monsterWrap], [start_btn_paranormal, "paranormal", paranormalWrap]].forEach(item => item[0].onclick = () => {
+        activeCard = item[1]; // check active card
+        container_disabled.classList.add("disabled");// removes card container
+        quiz_back.classList.add("activeBack");// activates quiz background
+        rule_box.classList.add("activeInfo");// activate rule box
+        item[2].classList.add("noHover");// removes hover from the played card
+});
 
 // Rule Box Play Button
 
@@ -252,7 +237,7 @@ function startTimer(time){
     }
 }
 
-// Card result box
+//  Card result box
 
     function showResult(){
         saveData["total score"] = totalScore; // store in total score
@@ -297,7 +282,7 @@ next_card.onclick = ()=>{
     }
 };
 
-//Final result box 
+// Final result box 
 
 function showFinal(){ 
     localStorage.removeItem(username); // remove the username from local storage to allow replaying the game
@@ -306,32 +291,27 @@ function showFinal(){
     const finalText = final_box.querySelector(".final_score"); // stores final score text message
     const final_title = document.querySelector(".final_title");
     const final_img = document.querySelector(".final_img");
-    if (totalScore == 15){ 
-        final_img.src = results[0].image; // update image from array
-        final_title.innerHTML = results[0].score; // select title from result.js array depending on score
-        let finalTag = `<p>You know too much, maybe it was you all along! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`; // create different span depending on the score
-        finalText.innerHTML = finalTag;  
-    } else if(totalScore >= 13){ 
-        final_img.src = results[1].image; // update image from array
-        final_title.innerHTML = results[1].score;  // select title from result.js array depending on score
-        let finalTag = `<p>You survived! You are pure but traumatised forever, yay! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`; // create different span depending on the score
-        finalText.innerHTML = finalTag;  // insert span in HTML
-    } else if(totalScore >= 8){ 
-        final_img.src = results[2].image; // update image from array
-        final_title.innerHTML = results[2].score;  // select title from result.js array depending on score
-        let finalTag = `<p>You acted like a hero now you suffer for it! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`; // create different span depending on the score
-        finalText.innerHTML = finalTag;  // insert span in HTML
-    } else if(totalScore >= 3){ 
-        final_img.src = results[3].image; // update image from array
-        final_title.innerHTML = results[3].score;  // select title from result.js array depending on score
-        let finalTag = `<p>You fool! You should have stayed with the group! You only have <span>${totalScore}</span> out of <span>15</span> questions.</p>`; // create different span depending on the score
-        finalText.innerHTML = finalTag;  // insert span in HTML
-    } else { 
-        final_img.src = results[4].image; // update image from array
-        final_title.innerHTML = results[4].score;  // select title from result.js array depending on score
-        let finalTag = `<p>You just had to go and look didn't you? You only have <span>${totalScore}</span> out of <span>15</span> questions.</p>`; // create different span depending on the score
-        finalText.innerHTML = finalTag;  // insert span in HTML
+    const arr = [
+        `<p>You know too much, maybe it was you all along! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`,
+        `<p>You survived! You are pure but traumatised forever, yay! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`,
+        `<p>You acted like a hero now you suffer for it! You have <span>${totalScore}</span> out of <span>15</span> questions.</p>`,
+        `<p>You fool! You should have stayed with the group! You only have <span>${totalScore}</span> out of <span>15</span> questions.</p>`,
+        `<p>You just had to go and look didn't you? You only have <span>${totalScore}</span> out of <span>15</span> questions.</p>`,
+    ];
+    const finalCountdown = num => {
+        final_img.src = results[num].image; // update image from array
+        final_title.innerHTML = results[num].score; // select title from result.js array depending on score
+        finalText.innerHTML = arr[num]; 
     }
+    totalScore === 15
+    ? finalCountdown(0)
+    : totalScore >= 13
+        ? finalCountdown(1)
+        : totalScore >= 8
+            ? finalCountdown(2)
+            : totalScore >= 3
+                ? finalCountdown(3)
+                : finalCountdown(4);
 }
 
 
