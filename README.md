@@ -153,12 +153,13 @@ View my wireframes [here](img/readme/t-error.pdf).
 
 ## Testing ##
 ---
-![Testing](assets/images/screenshot_responsive.png)
+![Testing](img/readme/responsive.png)
 
 * I tested the responsiveness of the website by using the [**Google Chrome DeveloperTool**](https://developers.google.com/web/tools/chrome-devtools) as well as the plug-in **Unicorn Revealer** to control my overflow and the website [**Am I Responsive**](http://ami.responsivedesign.is/). 
 * I also tested my website on **different browsers and real devices** : **Iphone 6s, Iphone X, Ipad Pro 12", Macbook air and Samsung Galaxy S20.**
 * I used a first **dirty version** of this project on **Gitpod** and **refactored** my code **step by step** to remove any **useless classes**
 * I tested my CSS file and my HTML files using [**CSS Validator**](https://jigsaw.w3.org/css-validator/) and [**HTML Validator**](https://validator.w3.org/).
+* I tested every **functions** of my script.js using multiple **console.log** and checking for **errors** in the **Google Chrome console**.
 * I tested my Javascript files with [**JSHint**](https://jshint.com/).
 * All pages passed the HTML,CSS and JS validator final test with no major issues.
 
