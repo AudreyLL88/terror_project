@@ -1,6 +1,6 @@
 # T-erroR #
 ---
-![Hero Screenshot](img/screenshot.png)
+![Hero Screenshot](img/readme/screenshot.png)
 
 ## Contents ##
 ---
@@ -94,8 +94,8 @@ I chose the pulsing effect because of its association with a heartbeat, which is
 * The **color scheme** used for the website is a classic **slasher poster palette** composed of a combination of **dark and light reds** for the **title** as well the **buttons** on the **cards** and the **quizz** paired with an **off-black** and **pure white**.
 * The **gradients** used for the **body** and the **Quizz background** can both be found on [**Ui Gradients**](https://uigradients.com/) under the names **Frozen** and **Anwar**.
 
-![Color Scheme](img/palette.png) 
-![Inspiration](img/poster.jpg)
+![Color Scheme](img/readme/palette.png) 
+![Inspiration](img/readme/poster.jpg)
 
 <a name="wireframing"></a>
 
@@ -103,7 +103,7 @@ I chose the pulsing effect because of its association with a heartbeat, which is
 ---
 For **wireframing** I used the tool [**Balsamiq**](https://balsamiq.com/).
 
-View my wireframes [here](img/t-error.pdf).
+View my wireframes [here](img/readme/t-error.pdf).
 
 * As you can see this is **a minimal wireframe** and I pushed a few changes for better readability and engagement:
 * I added the **username** box after my **mentor** suggested **local browser storage**.
@@ -171,7 +171,7 @@ View my wireframes [here](img/t-error.pdf).
 
 **Hover Cards**
 
-![Cards]()
+![Cards](img/readme/cards.gif)
 
 * **Implementation** 
 
@@ -182,7 +182,7 @@ View my wireframes [here](img/t-error.pdf).
 
 **Neon Pulsing Title**
 
-![Title]()
+![Title](img/readme/neon.gif)
 
 * **Implementation** 
 
@@ -192,7 +192,7 @@ View my wireframes [here](img/t-error.pdf).
 
 **Quizz with timer**
 
-![Quizz]()
+![Quizz](img/readme/quizz.gif)
 
 * **Implementation**
 
@@ -208,7 +208,7 @@ View my wireframes [here](img/t-error.pdf).
 
 **Card Score**
 
-![Scorecard]()
+![Scorecard](img/readme/cardscore1.jpg) ![Scorecard](img/readme/cardscore2.jpg) ![Scorecard](img/readme/cardscore3.jpg)
 
 * **Implementation**
 
@@ -219,7 +219,7 @@ View my wireframes [here](img/t-error.pdf).
 
 **Final Score**
 
-![Scorecard]()
+![Scorecard](img/readme/final1.jpg) ![Scorecard](img/readme/final2.jpg) ![Scorecard](img/readme/final3.jpg) ![Scorecard](img/readme/final4.jpg) ![Scorecard](img/readme/final5.jpg)
 
 * **Implementation**
 
@@ -231,7 +231,9 @@ View my wireframes [here](img/t-error.pdf).
 
 **Local Browser Storage**
 
-![Scorecard]()
+![localStorage](img/readme/localstorage.gif)
+![localStorage](img/readme/application.png)
+
 
 * **Implementation**
 
@@ -249,12 +251,13 @@ View my wireframes [here](img/t-error.pdf).
 **During development**
 
 * I had a major issue with my script.js file after everything was done because of this issue:
-![Issue](img/issue.png)
+![Issue](img/readme/issue.png)
 
 I did not understand what was going on but it stopped my javascript from working and couldn't get help so I created a second script file and copy/pasted step by step code from the first "dirty" repository I worked on. I then deleted the damaged script file, but it also deleted all my commits on that file...
 You can find the code from **the first "dirty" repository here : https://github.com/AudreyLL88/terror_v1.git**
 
 * After I put my **project** up for **peer-review**, it was brought to my attention that the **placeholder text** in the **username input** was not centered on **mobile**. I fixed it by **removing** the **short-hand padding** and simply adding **a padding-left** to the placeholder.
+* After my **mentor call** and my **peer-code-review** I realized that the code for the **card buttons** and the **final box result** was a bit **wet** so I fixed it using **arrays** and **forEach** properties.
 
 ## Deployment ##
 ---
@@ -280,6 +283,10 @@ You can find the code from **the first "dirty" repository here : https://github.
 **Text Credits:**
 
 * All text content has been written by yours truly, Audrey Laurène Lloancy.
+
+** Image Credits:**
+
+* The **three cards digital illustrations** were made by the amazing Ivar Dahlberg.
 
 **Many thanks to:**
 

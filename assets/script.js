@@ -60,11 +60,11 @@ function saveGame(){
 
  // Load previous username or create username
 function loadGame(){
-  let Data = JSON.parse(localStorage.getItem(username));
-  if(Data == null){
+  let data = JSON.parse(localStorage.getItem(username));
+  if(data == null){
        return;
   } else{
-      saveData = Data;
+      saveData = data;
   }
 }
 
@@ -114,7 +114,7 @@ user_btn.addEventListener('click', function(){
 
 //Card Buttons
 
-    [[start_btn_slasher, "slasher", slasherWrap], [start_btn_monster, "monster", monsterWrap], [start_btn_paranormal, "paranormal", paranormalWrap]].forEach(item => item[0].onclick = () => {
+[[start_btn_slasher, "slasher", slasherWrap], [start_btn_monster, "monster", monsterWrap], [start_btn_paranormal, "paranormal", paranormalWrap]].forEach(item => item[0].onclick = () => {
         activeCard = item[1]; // check active card
         container_disabled.classList.add("disabled");// removes card container
         quiz_back.classList.add("activeBack");// activates quiz background
