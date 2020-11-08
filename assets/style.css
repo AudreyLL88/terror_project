@@ -215,8 +215,8 @@ h3 {
 }
 
 .noHover {
-	background: #0e1111;
 	pointer-events: none;
+    opacity: 0.5;
 }
 
 .flipper {
