@@ -61,7 +61,7 @@ function saveGame(){
 
  // Load previous username or create username
 function loadGame(){
-  let data = JSON.parse(localStorage.getItem(username));
+  let data = JSON.parse(localStorage.getItem(username.toLowerCase()));
 
   if(data == null){
        return;
