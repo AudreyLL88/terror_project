@@ -1,6 +1,6 @@
 # T-erroR #
 ---
-![Hero Screenshot](img/readme/screenshot.png)
+![Hero Screenshot](assets/img/readme/screenshot.png)
 
 ## Contents ##
 ---
@@ -95,8 +95,8 @@ I chose the pulsing effect because of its association with a heartbeat, which is
 * The **color scheme** used for the website is a classic **slasher poster palette** composed of a combination of **dark and light reds** for the **title** as well the **buttons** on the **cards** and the **quizz** paired with an **off-black** and **pure white**.
 * The **gradients** used for the **body** and the **Quizz background** can both be found on [**Ui Gradients**](https://uigradients.com/) under the names **Frozen** and **Anwar**.
 
-![Color Scheme](img/readme/palette.png) 
-![Inspiration](img/readme/poster.jpg)
+![Color Scheme](assets/img/readme/palette.png) 
+![Inspiration](assets/img/readme/poster.jpg)
 
 <a name="wireframing"></a>
 
@@ -156,7 +156,7 @@ View my wireframes [here](img/readme/t-error.pdf).
 
 ## Testing ##
 ---
-![Testing](img/readme/responsive.png)
+![Testing](assets/img/readme/responsive.png)
 
 * I tested the responsiveness of the website by using the [**Google Chrome DeveloperTool**](https://developers.google.com/web/tools/chrome-devtools) as well as the plug-in **Unicorn Revealer** to control my overflow and the website [**Am I Responsive**](http://ami.responsivedesign.is/). 
 * I also tested my website on **different browsers and real devices** : **Iphone 6s, Iphone X, Ipad Pro 12", Macbook air, Google Chrome, Safari, Mozilla Firefox and Samsung Galaxy S20.**
@@ -175,7 +175,7 @@ View my wireframes [here](img/readme/t-error.pdf).
 
 **Hover Cards**
 
-![Cards](img/readme/cards.gif)
+![Cards](assets/img/readme/cards.gif)
 
 * **Implementation** 
 
@@ -186,7 +186,7 @@ View my wireframes [here](img/readme/t-error.pdf).
 
 **Neon Pulsing Title**
 
-![Title](img/readme/neon.gif)
+![Title](assets/img/readme/neon.gif)
 
 * **Implementation** 
 
@@ -196,7 +196,7 @@ View my wireframes [here](img/readme/t-error.pdf).
 
 **Quizz with timer**
 
-![Quizz](img/readme/quizz.gif)
+![Quizz](assets/img/readme/quizz.gif)
 
 * **Implementation**
 
@@ -212,7 +212,7 @@ View my wireframes [here](img/readme/t-error.pdf).
 
 **Card Score**
 
-![Scorecard](img/readme/cardscore1.jpg) ![Scorecard](img/readme/cardscore2.jpg) ![Scorecard](img/readme/cardscore3.jpg)
+![Scorecard](assets/img/readme/cardscore1.jpg) ![Scorecard](assets/img/readme/cardscore2.jpg) ![Scorecard](assets/img/readme/cardscore3.jpg)
 
 * **Implementation**
 
@@ -223,7 +223,7 @@ View my wireframes [here](img/readme/t-error.pdf).
 
 **Final Score**
 
-![Scorecard](img/readme/final1.jpg) ![Scorecard](img/readme/final2.jpg) ![Scorecard](img/readme/final3.jpg) ![Scorecard](img/readme/final4.jpg) ![Scorecard](img/readme/final5.jpg)
+![Scorecard](assets/img/readme/final1.jpg) ![Scorecard](assets/img/readme/final2.jpg) ![Scorecard](assets/img/readme/final3.jpg) ![Scorecard](assets/img/readme/final4.jpg) ![Scorecard](assets/img/readme/final5.jpg)
 
 * **Implementation**
 
@@ -235,8 +235,8 @@ View my wireframes [here](img/readme/t-error.pdf).
 
 **Local Browser Storage**
 
-![localStorage](img/readme/localstorage.gif)
-![localStorage](img/readme/application.png)
+![localStorage](assets/img/readme/localstorage.gif)
+![localStorage](assets/img/readme/application.png)
 
 
 * **Implementation**
@@ -255,7 +255,7 @@ View my wireframes [here](img/readme/t-error.pdf).
 **During development**
 
 * I had a major issue with my script.js file after everything was done because of this issue:
-![Issue](img/readme/issue.png)
+![Issue](assets/img/readme/issue.png)
 
 I did not understand what was going on but it stopped my javascript from working and couldn't get help so I created a second script file and copy/pasted step by step code from the first "dirty" repository I worked on. I then deleted the damaged script file, but it also deleted all my commits on that file...
 You can find the code from **the first "dirty" repository here : https://github.com/AudreyLL88/terror_v1.git**
