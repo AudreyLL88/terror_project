@@ -8,6 +8,8 @@ const continue_btn = document.querySelector(".buttons .start"); // Info box cont
 const next_btn = document.querySelector(".next_btn"); // Next button in Quiz box
 const user_btn = document.getElementById('username-btn'); // Start button in username box
 const next_card = document.querySelector(".buttons .next_card"); // Result box next button
+const restart_btn = document.querySelector(".restart"); // targets restart button on final box
+const quit_btn = document.querySelectorAll(".quit"); // target all buttons with the quit css class
 
 // Boxes and containers const
 const rule_box = document.querySelector(".rule_box");
@@ -49,19 +51,16 @@ let saveData = {
     "total score": 0
 };// card and score dictionary for local storage
 let counter;
-let i;
 
 // Local Storage 
 
 // Save game data 
-function saveGame()
-{
+function saveGame(){
   localStorage.setItem(username.toLowerCase(), JSON.stringify(saveData));
 } 
 
  // Load previous username or create username
-function loadGame()
-{
+function loadGame(){
   let data = JSON.parse(localStorage.getItem(username));
 
   if(data == null){
@@ -72,43 +71,35 @@ function loadGame()
 }
 
 // Restoring of the cards played/already played
-function restoreGameScreen()
-{
-    if(saveData["slasher card"] == true)
-    {
+function restoreGameScreen(){
+    if(saveData["slasher card"] == true){
         slasherWrap.classList.add("noHover"); // removes hover on card
         cardCount += 1; // add to card counter
     }
-    if(saveData["paranormal card"] == true)
-    {
+    if(saveData["paranormal card"] == true){
         paranormalWrap.classList.add("noHover"); // removes hover on card
         cardCount += 1; //add to card counter
     }
-    if(saveData["monster card"] == true)
-    {
+    if(saveData["monster card"] == true){
         monsterWrap.classList.add("noHover"); // removes hover on card
         cardCount += 1; // add to card counter
     }
-    if(cardCount == 3) 
-    {
+    if(cardCount == 3) {
         showFinal(); // Shows final result if all cards are played
     }
 } 
 
 // Showing Cards on username button click
 
-function fadeIn(el)
-{
+function fadeIn(el){
     el.classList.add('fadein'); // adds fadein class to element
 }
 
-function fadeOut(el)
-{
+function fadeOut(el){
     el.classList.add('fadeout'); // adds fadeout class to element
 }
 
-user_btn.addEventListener('click', function()
-{
+user_btn.addEventListener('click', function(){
     username = userInput.value;
 
     if(username == ""){
@@ -130,8 +121,7 @@ user_btn.addEventListener('click', function()
 
 [[start_btn_slasher, "slasher", slasherWrap], 
 [start_btn_monster, "monster", monsterWrap], 
-[start_btn_paranormal, "paranormal", paranormalWrap]].forEach(item => item[0].onclick = () => 
-{
+[start_btn_paranormal, "paranormal", paranormalWrap]].forEach(item => item[0].onclick = () => {
     activeCard = item[1]; // check active card
     container_disabled.classList.add("disabled");// removes card container
     quiz_back.classList.add("activeBack");// activates quiz background
@@ -141,8 +131,7 @@ user_btn.addEventListener('click', function()
 
 // Rule Box Play Button
 
-continue_btn.onclick =()=>
-{
+continue_btn.onclick =()=> {
     rule_box.classList.remove("activeInfo");// removes rule container
     quiz_box.classList.add("activeQuiz");// activates quiz box
     showQuestions(0); // Show the questions from questions.js
@@ -150,10 +139,13 @@ continue_btn.onclick =()=>
     startTimer(15); // Start timer at 15sec
 };
 
+quit_btn.forEach(item => item.onclick = () => {
+    window.location.href = "index.html"; // ssend player back to landing page
+});
+
 //Quiz box 
 
-function showQuestions(index)
-{
+function showQuestions(index) {
     if(activeCard == "slasher"){
         questionsArray = questions2;// set question array to active card 
     } else if(activeCard == "monster"){
@@ -177,15 +169,14 @@ function showQuestions(index)
 
     const option = option_list.querySelectorAll(".option");
 
-    for(i=0; i < option.length; i++){
+    for(let i=0; i < option.length; i++) {
         option[i].setAttribute("onclick", "optionSelected(this)");
     }// allows to select an option on click
 }
 
 // Allow to select function and display correct/wrong answers
 
-function  optionSelected(answer)
-{
+function  optionSelected(answer) {
     clearInterval(counter);// timer restart
 
     let userAns = answer.textContent; // set username answer
@@ -199,8 +190,7 @@ function  optionSelected(answer)
     } else{
         answer.classList.add("incorrect"); // add red colors
 
-         for (i = 0; i < allOptions; i++) 
-         {
+         for (let i = 0; i < allOptions; i++) {
             if(option_list.children[i].textContent == correctAns)
             {
             option_list.children[i].setAttribute("class", "option correct");
@@ -208,7 +198,7 @@ function  optionSelected(answer)
         }
     } 
 
-    for(i=0; i < allOptions; i++){
+    for(let i=0; i < allOptions; i++){
         option_list.children[i].classList.add("disabled"); 
     }
      // disable other options after click
@@ -217,8 +207,7 @@ function  optionSelected(answer)
 
 // Next button display
 
-next_btn.onclick =()=>
-{
+next_btn.onclick =()=> {
    if(que_count < questionsArray.length -1){
         que_count++;// add to footer question counter
         que_numb++;// add to question number
@@ -234,8 +223,7 @@ next_btn.onclick =()=>
 
 // Question counter in Quizz box footer
 
-function queCounter(index)
-{
+function queCounter(index) {
     const question_counter = document.querySelector(".total"); // select the CSS class in quiz footer
     let totalQuestionCountTag = `<span><p>${index}</p> of <p>${questionsArray.length}</p> Questions</span>`; // creates a span storing question array length
 
@@ -244,37 +232,31 @@ function queCounter(index)
 
 // Timer
 
-function startTimer(time)
-{
+function startTimer(time) {
     counter = setInterval(timer, 1000); // set counter variable interval to seconds
 
-    function timer()
-    {
+    function timer(){
         timeCount.textContent = time;
         time--; // decreasing
 
-        if(time < 9)
-        {
+        if(time < 9){
             let addZero = timeCount.textContent; 
             timeCount.textContent = "0" + addZero; // add a 0 from 9
         }
-        if(time < 0)
-        {
+        if(time < 0){
             clearInterval(counter);
              timeCount.textContent = "00"; // stops timer at 00
 
              const allOptions = option_list.children.length; // get options items
              let correcAns = questionsArray[que_count].answer; // correct answer from questions array
 
-             for(i=0; i < allOptions; i++)
-             {
+             for(let i=0; i < allOptions; i++) {
                 if(option_list.children[i].textContent == correcAns){ // match option to correct answer
                     option_list.children[i].setAttribute("class", "option correct"); // adding green color answer
                 }
             }
 
-            for(i=0; i < allOptions; i++)
-            {
+            for(let i=0; i < allOptions; i++) {
                 option_list.children[i].classList.add("disabled"); // disable all options
             }
             next_btn.style.display = "block"; // show the buttons once option is selected
@@ -284,8 +266,7 @@ function startTimer(time)
 
 //  Card result box
 
-    function showResult()
-    {
+    function showResult() {
         saveData["total score"] = totalScore; // store in total score
 
         if(activeCard == "slasher"){
@@ -305,8 +286,7 @@ function startTimer(time)
 
         const cardScore = result_box.querySelector(".card_score"); //set the card score 
 
-        if (userScore > 3)
-        { 
+        if (userScore > 3){ 
             let scoreTag = `<p>You survived this time... You have <span>${userScore}</span> 
                             out of <span>${questionsArray.length}</span> questions.</p>`;// create different span depending on the score
 
@@ -326,16 +306,14 @@ function startTimer(time)
 
 //Next button on result box
 
-next_card.onclick = ()=>
-{
+next_card.onclick = ()=> {
     result_box.classList.remove("activeResult"); // removes card result box
     timeValue = 15; // reset timer
     que_count = 0; // reset question counter
     que_numb = 1; // reset question number
     userScore = 0; // reset card score
 
-    if(cardCount >= 3)
-    {
+    if(cardCount >= 3) {
         showFinal(); // if all three cards are played it shows the final box
     } else{
         container_disabled.classList.remove("disabled"); // if still cards to play, reactivate the card container
@@ -345,8 +323,11 @@ next_card.onclick = ()=>
 
 // Final result box 
 
-function showFinal()
-{ 
+restart_btn.onclick =()=> {
+    window.location.href = "cards.html"; // sends player back to username page
+};
+
+function showFinal() { 
     localStorage.removeItem(username); // remove the username from local storage to allow replaying the game
     result_box.classList.remove("activeResult"); // removes result box
     final_box.classList.add("activeFinal");// activate final box
@@ -361,12 +342,11 @@ function showFinal()
         `<p>You fool! You should have stayed with the group! You only have <span>${totalScore}</span> out of <span>15</span> questions.</p>`,
         `<p>You just had to go and look didn't you? You only have <span>${totalScore}</span> out of <span>15</span> questions.</p>`,
     ];
-    const finalCountdown = num => 
-    {
+    const finalCountdown = num => {
         final_img.src = results[num].image; // update image from array
         final_title.innerHTML = results[num].score; // select title from result.js array depending on score
         finalText.innerHTML = arr[num]; 
-    }
+    };
 
     totalScore === 15
     ? finalCountdown(0)

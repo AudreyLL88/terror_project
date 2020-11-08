@@ -1,22 +1,22 @@
 let results = [
     {
         score: "Killer",
-        image: 'img/killer.jpg'
+        image: 'assets/img/killer.jpg'
     },
     {
         score: "Final Girl",
-        image: 'img/finalgirl.jpg'
+        image: 'assets/img/finalgirl.jpg'
     },
     {
         score: "Critical Condition",
-        image: 'img/critical.jpg'
+        image: 'assets/img/critical.jpg'
     },
     {
         score: "Brutally Murdered",
-        image: 'img/murder.jpg'
+        image: 'assets/img/murder.jpg'
     },
     {
         score: "That Blonde extra",
-        image: 'img/blonde.jpg'
+        image: 'assets/img/blonde.jpg'
     },
 ]

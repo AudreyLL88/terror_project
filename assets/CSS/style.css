@@ -168,7 +168,7 @@ h3 {
 }
 
 #title-container.fadein {
-	opacity: 2;
+	opacity:1;
 	transition: opacity 1000ms;
 }
 
@@ -188,7 +188,7 @@ h3 {
 }
 
 #card-container.fadein {
-	opacity: 2;
+	opacity:1;
 	transition: opacity 1000ms;
 }
 
@@ -369,7 +369,7 @@ h3 {
 
 .buttons button.quit {
 	background: #fff;
-	color: #bf0000
+	color: #bf0000; 
 }
 
 /* Quiz box */
@@ -500,7 +500,6 @@ h3 {
 
 .option.incorrect {
 	background: #a4283a;
-	border-color: #a4283a;
 	color: #f8d7da;
 }
 
