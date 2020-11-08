@@ -83,8 +83,9 @@ I chose the pulsing effect because of its association with a heartbeat, which is
 
 ### Icons and Images ###
 
-* **All icons** used on the website are provided by [**FontAwesome**](https://fontawesome.com/) on the **card result** and **final result boxes**.
+* **The icon** used on the website are provided by [**FontAwesome**](https://fontawesome.com/) on the **card result** .
 * The **image** used for the **landing page** is a **free image** from the image bank [**Pixabay**](https://pixabay.com/sv/) with a simple research with the keyword **spooky**.
+* The **images** on back of each cards are from [**Adobe Stock**](https://stock.adobe.com/).
 * **All cards images** have been custom made by **Ivar Dahlberg** (aka my husband) for this **game**.
 
 <a name="colors"></a>
@@ -148,6 +149,8 @@ View my wireframes [here](img/readme/t-error.pdf).
 * [Font-Awesome](https://fontawesome.com/icons?d=gallery)
 * [Google fonts](https://fonts.google.com/)
 * [Git](https://git-scm.com/)
+* [**Krita**]()
+* [**Procreate**]()
 
 <a name="testing"></a>
 
@@ -156,7 +159,7 @@ View my wireframes [here](img/readme/t-error.pdf).
 ![Testing](img/readme/responsive.png)
 
 * I tested the responsiveness of the website by using the [**Google Chrome DeveloperTool**](https://developers.google.com/web/tools/chrome-devtools) as well as the plug-in **Unicorn Revealer** to control my overflow and the website [**Am I Responsive**](http://ami.responsivedesign.is/). 
-* I also tested my website on **different browsers and real devices** : **Iphone 6s, Iphone X, Ipad Pro 12", Macbook air and Samsung Galaxy S20.**
+* I also tested my website on **different browsers and real devices** : **Iphone 6s, Iphone X, Ipad Pro 12", Macbook air, Google Chrome, Safari, Mozilla Firefox and Samsung Galaxy S20.**
 * I used a first **dirty version** of this project on **Gitpod** and **refactored** my code **step by step** to remove any **useless classes**
 * I tested my CSS file and my HTML files using [**CSS Validator**](https://jigsaw.w3.org/css-validator/) and [**HTML Validator**](https://validator.w3.org/).
 * I tested every **functions** of my script.js using multiple **console.log** and checking for **errors** in the **Google Chrome console**.
@@ -285,7 +288,7 @@ You can find the code from **the first "dirty" repository here : https://github.
 
 * All text content has been written by yours truly, Audrey Laurène Lloancy.
 
-** Image Credits:**
+**Image Credits:**
 
 * The **three cards digital illustrations** were made by the amazing Ivar Dahlberg.
 
