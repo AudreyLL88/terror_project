@@ -158,7 +158,7 @@ View my wireframes [here](img/readme/t-error.pdf).
 ---
 ![Testing](assets/img/readme/responsive.png)
 
-* I tested the responsiveness of the website by using the [**Google Chrome DeveloperTool**](https://developers.google.com/web/tools/chrome-devtools) as well as the plug-in **Unicorn Revealer** to control my overflow and the website [**Am I Responsive**](http://ami.responsivedesign.is/). 
+* I tested the responsiveness of the website by using the [**Google Chrome Developer Tool**](https://developers.google.com/web/tools/chrome-devtools) as well as the plug-in **Unicorn Revealer** to control my overflow and the website [**Am I Responsive**](http://ami.responsivedesign.is/). 
 * I also tested my website on **different browsers and real devices** : **Iphone 6s, Iphone X, Ipad Pro 12", Macbook air, Google Chrome, Safari, Mozilla Firefox and Samsung Galaxy S20.**
 * I used a first **dirty version** of this project on **Gitpod** and **refactored** my code **step by step** to remove any **useless classes**
 * I tested my CSS file and my HTML files using [**CSS Validator**](https://jigsaw.w3.org/css-validator/) and [**HTML Validator**](https://validator.w3.org/).
@@ -171,7 +171,7 @@ View my wireframes [here](img/readme/t-error.pdf).
 * **Implementation** 
 
 * I used **Bootstrap** (on the landing page only) as well as **flexbox and custom CSS media queries** to ensure that the website didn't break on all screen sizes.
-* To ensure that the **hover** class would work on IOS, I used the poetic attribute **ontouchmove** in the html tag of card.html.
+* To ensure that the **hover** class would work on IOS, I used the **event listener** **"touchstart"**.
 
 **Hover Cards**
 
