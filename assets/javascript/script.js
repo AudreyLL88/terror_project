@@ -52,6 +52,10 @@ let saveData = {
 };// card and score dictionary for local storage
 let counter;
 
+//Hover on mobile
+
+document.addEventListener("touchstart", function () {}, true);
+
 // Local Storage 
 
 // Save game data 
