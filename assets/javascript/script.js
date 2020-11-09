@@ -72,7 +72,7 @@ function loadGame() {
   } else {
     saveData = data;
   }
-  totalScore= data["total score"]
+  totalScore= data["total score"];
 }
 
 // Restoring of the cards played/already played

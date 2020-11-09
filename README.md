@@ -262,6 +262,7 @@ You can find the code from **the first "dirty" repository here : https://github.
 
 * After I put my **project** up for **peer-review**, it was brought to my attention that the **placeholder text** in the **username input** was not centered on **mobile**. I fixed it by **removing** the **short-hand padding** and simply adding **a padding-left** to the placeholder.
 * After my **mentor call** and my **peer-code-review** I realized that the code for the **card buttons** and the **final box result** was a bit **wet** so I fixed it using **arrays** and **forEach** properties.
+* I noticed towards the end of the **project** that the **card score** and the **final result** was not uploaded correctly when pressing the last **"exit"** **button** on the **last card score box**. I realized that the function I created to **reload** the game didn't take the **total score** into account and fixed it.
 
 ## Deployment ##
 ---
